@@ -1,0 +1,35 @@
+baseURL: https://jojonosaur.us/
+languageCode: en-us
+title: Jojonosaur.us
+
+theme: ["PaperMod"]
+
+params:
+  assets:
+      favicon: "/assets/dinosaur-egg.png"
+  homeInfoParams:
+    Title: Hi there wave
+    Content: Can be Info, links, about...
+
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Archive
+          url: archives
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+        - name: WiKi
+          url: https://github.com/adityatelange/hugo-PaperMod/wiki/
