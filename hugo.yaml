@@ -2,7 +2,7 @@ baseURL: https://jojonosaur.us/
 languageCode: en-us
 title: Jojonosaur.us
 
-theme: ["PaperMod"]
+theme: ["hugo-notice", "PaperMod"]
 
 params:
   assets:
@@ -23,13 +23,13 @@ languages:
       series: series
     menu:
       main:
-        - name: Archive
+        - name: 🏛️Archive
           url: archives
           weight: 5
-        - name: Search
+        - name: 🔍Search
           url: search/
           weight: 10
-        - name: Tags
+        - name: 🏷️Tags
           url: tags/
           weight: 10
         # - name: WiKi
