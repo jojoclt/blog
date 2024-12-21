@@ -6,10 +6,11 @@ theme: ["PaperMod"]
 
 params:
   assets:
-      favicon: "/assets/dinosaur-egg.png"
+    favicon: "/assets/dinosaur-egg.png"
   homeInfoParams:
-    Title: Hi there wave
-    Content: Can be Info, links, about...
+    Title: Hi there!
+    Content: I'm Chalanthorn (Jojo) 🇹🇭.
+  social: true
 
 
 languages:
@@ -31,5 +32,5 @@ languages:
         - name: Tags
           url: tags/
           weight: 10
-        - name: WiKi
-          url: https://github.com/adityatelange/hugo-PaperMod/wiki/
+        # - name: WiKi
+        #   url: https://github.com/adityatelange/hugo-PaperMod/wiki/
