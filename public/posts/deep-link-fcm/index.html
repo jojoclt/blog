@@ -4,7 +4,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm | Jojonosaur.us</title>
 <meta name="keywords" content="">
 <meta name="description" content="
@@ -86,6 +86,114 @@ data class DetailPage(
 
     </style>
 </noscript>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JVHY8G54NJ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JVHY8G54NJ');
+        }
+      </script><meta property="og:url" content="http://localhost:1313/posts/deep-link-fcm/">
+  <meta property="og:site_name" content="Jojonosaur.us">
+  <meta property="og:title" content="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">
+  <meta property="og:description" content=" This Post is being built By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph
+Prerequisites KotlinX.Serialization Navigation Compose Navigating Deep Links with Intents Url Parameters Using Something The following DetailPage class is used as an example for the navigation
+@Serializable data class DetailPage( @SerialName(&#34;title_name&#34;) val title: String, @SerialName(&#34;sub_title&#34;) val subTitle: String? = null val id: Int, ) Tip">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-21T16:00:28+08:00">
+    <meta property="article:modified_time" content="2024-12-21T16:00:28+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">
+<meta name="twitter:description" content="
+This Post is being built
+
+By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph
+Prerequisites
+
+KotlinX.Serialization
+Navigation Compose
+Navigating Deep Links with Intents
+
+Url Parameters
+
+Using Something
+The following DetailPage class is used as an example for the navigation
+@Serializable
+data class DetailPage(
+    @SerialName(&#34;title_name&#34;)
+    val title: String,
+    @SerialName(&#34;sub_title&#34;)
+    val subTitle: String? = null
+    
+    val id: Int,
+)
+
+    
+        
+            
+  
+
+
+        Tip">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm",
+      "item": "http://localhost:1313/posts/deep-link-fcm/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm",
+  "name": "🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm",
+  "description": " This Post is being built By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph\nPrerequisites KotlinX.Serialization Navigation Compose Navigating Deep Links with Intents Url Parameters Using Something The following DetailPage class is used as an example for the navigation\n@Serializable data class DetailPage( @SerialName(\u0026#34;title_name\u0026#34;) val title: String, @SerialName(\u0026#34;sub_title\u0026#34;) val subTitle: String? = null val id: Int, ) Tip\n",
+  "keywords": [
+    
+  ],
+  "articleBody": " This Post is being built By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph\nPrerequisites KotlinX.Serialization Navigation Compose Navigating Deep Links with Intents Url Parameters Using Something The following DetailPage class is used as an example for the navigation\n@Serializable data class DetailPage( @SerialName(\"title_name\") val title: String, @SerialName(\"sub_title\") val subTitle: String? = null val id: Int, ) Tip\nThis is a very good tip.\nIf you want the navDeepLink to parse your URI, you should put it in this format\nappName://DetailPage/{title_name}/{id}?sub_title={sub_title}\nIn the compose navigation the code will look like\ncomposable( deepLinks = listOf( basePath = \"appName://DetailPage\", ) ) What if the Uri is in different format? For example, you want to extract the id and name pattern from the uri or using custom uri altogether. together, you might want to write a custom uriPattern in the NavDeepLink.navDeepLink API\nIt can be put together as\ncomposable( deepLinks = listOf( basePath = \"appName://DetailPage\", ) { uriPattern = \"appName://{id}_{title_name}?sub_title={sub_title}\" } ) { val args = it.toRoute } Then args can be retrieve using\n1 2 3 4 5 6 7 8 Or even create something difficult to build like composable( deepLinks = listOf( basePath = \"appName://DetailPage\", ) { uriPattern = \"example://full_name/{first_name}/{last_name}/edit\" } ) [!NOTE] This uriPattern might not be type safe, but it offers flexibility for those in need\n",
+  "wordCount" : "228",
+  "inLanguage": "en",
+  "datePublished": "2024-12-21T16:00:28+08:00",
+  "dateModified": "2024-12-21T16:00:28+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/deep-link-fcm/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jojonosaur.us",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/assets/dinosaur-egg.png"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -154,11 +262,11 @@ data class DetailPage(
     <h1 class="post-title entry-hint-parent">
       🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm
     </h1>
-    <div class="post-meta"><span title='2024-12-21 16:00:28 +0800 CST'>December 21, 2024</span>
+    <div class="post-meta"><span title='2024-12-21 16:00:28 +0800 CST'>December 21, 2024</span>&nbsp;·&nbsp;2 min
 
 </div>
   </header> <div class="toc">
-    <details  open>
+    <details >
         <summary accesskey="c" title="(Alt + C)">
             <span class="details">Table of Contents</span>
         </summary>

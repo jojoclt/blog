@@ -9,11 +9,14 @@
     <lastBuildDate>Sat, 21 Dec 2024 16:00:28 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm</title>
+      <title>🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm</title>
       <link>http://localhost:1313/posts/deep-link-fcm/</link>
       <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
       <guid>http://localhost:1313/posts/deep-link-fcm/</guid>
-      <description>&lt;p&gt;By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph&lt;/p&gt;
+      <description>&lt;blockquote&gt;
+&lt;h2 id=&#34;this-post-is-being-built&#34;&gt;This Post is being built&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph&lt;/p&gt;
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;KotlinX.Serialization&lt;/li&gt;
@@ -155,16 +158,6 @@
 &lt;/svg&gt;
 
         &lt;/span&gt;Tip&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>One to One vs. One to Many: Navigating Scaffold Strategies in Jetpack Compose</title>
-      <link>http://localhost:1313/posts/bottom-nav-shared-transition/</link>
-      <pubDate>Sat, 02 Nov 2024 17:20:49 +0800</pubDate>
-      <guid>http://localhost:1313/posts/bottom-nav-shared-transition/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Hello Navigation
-Scaffold, NavHost
-Nested Graph&lt;/p&gt;</description>
     </item>
     <item>
       <title>My First Post!</title>

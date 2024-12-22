@@ -5,13 +5,21 @@ title: Jojonosaur.us
 theme: ["hugo-notice", "PaperMod"]
 
 params:
+  # author: Me
   assets:
     favicon: "/assets/dinosaur-egg.png"
   homeInfoParams:
     Title: Hi there!
     Content: I'm Chalanthorn (Jojo) 🇹🇭.
   social: true
+  env: production
+  ShowReadingTime: true
+  showtoc: true
+  tocopen: false
 
+services:
+  googleAnalytics:
+    id: G-JVHY8G54NJ
 
 languages:
   en:

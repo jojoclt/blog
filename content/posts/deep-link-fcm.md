@@ -2,8 +2,8 @@
 date: '2024-12-21T16:00:28+08:00'
 draft: false
 title: '🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm'
-ShowToc: true
-TocOpen: true
+# ShowToc: true
+# TocOpen: true
 ---
 
 > ## This Post is being built
