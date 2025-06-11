@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jojonosaurus</title>
+    <link>//localhost:1313/th/tags/</link>
+    <description>Recent content in Tags on Jojonosaurus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>th</language>
+    <copyright>© 2025 Jojo Chalanthorn</copyright>
+    <lastBuildDate>Sat, 21 Dec 2024 16:00:28 +0800</lastBuildDate><atom:link href="//localhost:1313/th/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Android</title>
+      <link>//localhost:1313/th/tags/android/</link>
+      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      
+      <guid>//localhost:1313/th/tags/android/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Compose</title>
+      <link>//localhost:1313/th/tags/compose/</link>
+      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      
+      <guid>//localhost:1313/th/tags/compose/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Deep-Links</title>
+      <link>//localhost:1313/th/tags/deep-links/</link>
+      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      
+      <guid>//localhost:1313/th/tags/deep-links/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Fcm</title>
+      <link>//localhost:1313/th/tags/fcm/</link>
+      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      
+      <guid>//localhost:1313/th/tags/fcm/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Navigation</title>
+      <link>//localhost:1313/th/tags/navigation/</link>
+      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      
+      <guid>//localhost:1313/th/tags/navigation/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

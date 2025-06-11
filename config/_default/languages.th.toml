@@ -1,0 +1,26 @@
+languageCode = "th"
+languageName = "Thai"
+weight = 1
+title = "Jojonosaurus"
+contentDir = 'content/th'
+
+
+[params]
+displayName = "TH"
+isoCode = "th"
+rtl = false
+# logo = "img/logo.png"
+description = "My awesome website"
+# copyright = "Copy, _right?_ :thinking_face:"
+dateFormat = "2 January 2006"
+
+[params.author]
+name = "Jojo Chalanthorn"
+image = "img/avatar.png"
+headline = "This is my very simple profile website with my links"
+bio = "A little bit about you"
+links = [
+  #  { link = "https://nunocoracao.github.io/blowfish/" },
+  { github = "https://github.com/jojoclt" },
+  #  { x-twitter = "https://twitter.com/burufugu" }
+]

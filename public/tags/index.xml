@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Jojo Chalanthorn</copyright>
-    <lastBuildDate>Sat, 21 Dec 2024 16:00:28 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Jun 2025 19:55:28 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android</title>
       <link>//localhost:1313/tags/android/</link>
-      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
       
       <guid>//localhost:1313/tags/android/</guid>
       <description></description>
@@ -20,9 +20,19 @@
     </item>
     
     <item>
+      <title>Build</title>
+      <link>//localhost:1313/tags/build/</link>
+      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
+      
+      <guid>//localhost:1313/tags/build/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Compose</title>
       <link>//localhost:1313/tags/compose/</link>
-      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
       
       <guid>//localhost:1313/tags/compose/</guid>
       <description></description>
@@ -30,9 +40,19 @@
     </item>
     
     <item>
+      <title>Gradle</title>
+      <link>//localhost:1313/tags/gradle/</link>
+      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
+      
+      <guid>//localhost:1313/tags/gradle/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Deep-Links</title>
       <link>//localhost:1313/tags/deep-links/</link>
-      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
       
       <guid>//localhost:1313/tags/deep-links/</guid>
       <description></description>
@@ -42,7 +62,7 @@
     <item>
       <title>Fcm</title>
       <link>//localhost:1313/tags/fcm/</link>
-      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
       
       <guid>//localhost:1313/tags/fcm/</guid>
       <description></description>
@@ -52,7 +72,7 @@
     <item>
       <title>Navigation</title>
       <link>//localhost:1313/tags/navigation/</link>
-      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
       
       <guid>//localhost:1313/tags/navigation/</guid>
       <description></description>

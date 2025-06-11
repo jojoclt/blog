@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="light"
+<html lang="th" dir="ltr" class="scroll-smooth" data-default-appearance="light"
   data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
-  <meta http-equiv="content-language" content="en" />
+  <meta http-equiv="content-language" content="th" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Type-Safe Navigation in Jetpack Compose &middot; Jojonosaurus</title>
-  <meta name="title" content="Type-Safe Navigation in Jetpack Compose &middot; Jojonosaurus" />
+  <title>🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm &middot; Jojonosaurus</title>
+  <meta name="title" content="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm &middot; Jojonosaurus" />
   
   <meta name="description" content="My awesome website" />
+  <meta name="keywords" content="android, compose, navigation, deep-links, fcm, " />
   
   
-  
-  <link rel="canonical" href="//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/" />
+  <link rel="canonical" href="//localhost:1313/th/posts/deep-link-fcm/" />
   
   
   
@@ -47,7 +47,7 @@
   
   
   <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.ef42d13b8b22e79ba861f355978b8e23ee3e833e8fab36a7c3dc3c59e19aabe18697e44db538e24ca8df4aca690ba49181a98144450dd72624a7ead006d88f40.js"
-    integrity="sha512-70LRO4si55uoYfNVl4uOI&#43;4&#43;gz6Pqzanw9w8WeGaq&#43;GGl&#43;RNtTjiTKjfSsppC6SRgamBREUN1yYkp&#43;rQBtiPQA==" data-copy="Copy" data-copied="Copied"></script>
+    integrity="sha512-70LRO4si55uoYfNVl4uOI&#43;4&#43;gz6Pqzanw9w8WeGaq&#43;GGl&#43;RNtTjiTKjfSsppC6SRgamBREUN1yYkp&#43;rQBtiPQA==" data-copy="คัดลอก" data-copied="คัดลอกแล้ว"></script>
   
   
   
@@ -67,20 +67,25 @@
   
   
   
-  <meta property="og:url" content="//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/">
+  <meta property="og:url" content="//localhost:1313/th/posts/deep-link-fcm/">
   <meta property="og:site_name" content="Jojonosaurus">
-  <meta property="og:title" content="Type-Safe Navigation in Jetpack Compose">
-  <meta property="og:description" content="What You’ll Learn #Setting up type-safe navigation with Kotlin Serialization Creating serializable route classes Navigation between screens Benefits over string-based navigation Topics #@Serializable data classes for routes NavHost setup with type-safe routes Navigation with arguments Best practices and gotchas Library Requirement #Navigation Compose version &gt;= 2.8.0 and version &lt; 3.0.0 (Updated June 2025, Google have released a new Navigation3 Library for Jetpack Compose which is now in alpha with better backstack handling and some breaking changes.) KotlinX.Serialization">
-  <meta property="og:locale" content="en">
+  <meta property="og:title" content="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">
+  <meta property="og:description" content="This Post is being built #By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph">
+  <meta property="og:locale" content="th">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-05-21T16:00:28+08:00">
-    <meta property="article:modified_time" content="2025-05-21T16:00:28+08:00">
+    <meta property="article:published_time" content="2024-12-21T16:00:28+08:00">
+    <meta property="article:modified_time" content="2024-12-21T16:00:28+08:00">
+    <meta property="article:tag" content="Android">
+    <meta property="article:tag" content="Compose">
+    <meta property="article:tag" content="Navigation">
+    <meta property="article:tag" content="Deep-Links">
+    <meta property="article:tag" content="Fcm">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Type-Safe Navigation in Jetpack Compose">
-  <meta name="twitter:description" content="What You’ll Learn #Setting up type-safe navigation with Kotlin Serialization Creating serializable route classes Navigation between screens Benefits over string-based navigation Topics #@Serializable data classes for routes NavHost setup with type-safe routes Navigation with arguments Best practices and gotchas Library Requirement #Navigation Compose version &gt;= 2.8.0 and version &lt; 3.0.0 (Updated June 2025, Google have released a new Navigation3 Library for Jetpack Compose which is now in alpha with better backstack handling and some breaking changes.) KotlinX.Serialization">
+  <meta name="twitter:title" content="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">
+  <meta name="twitter:description" content="This Post is being built #By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph">
 
     
   
@@ -90,26 +95,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Type-Safe Navigation in Jetpack Compose",
-    "headline": "Type-Safe Navigation in Jetpack Compose",
+    "name": "🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm",
+    "headline": "🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm",
     
-    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eWhat You\u0026rsquo;ll Learn \r\n    \u003cdiv id=\u0022what-youll-learn\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\r\n    \r\n    \u003cspan\r\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\r\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\r\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#what-youll-learn\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\r\n    \u003c\/span\u003e        \r\n    \r\n\u003c\/h2\u003e\r\n\u003cul\u003e\n\u003cli\u003eSetting up type-safe navigation with Kotlin Serialization\u003c\/li\u003e\n\u003cli\u003eCreating serializable route classes\u003c\/li\u003e\n\u003cli\u003eNavigation between screens\u003c\/li\u003e\n\u003cli\u003eBenefits over string-based navigation\u003c\/li\u003e\n\u003c\/ul\u003e\n\r\n\u003ch2 class=\u0022relative group\u0022\u003eTopics \r\n    \u003cdiv id=\u0022topics\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\r\n    \r\n    \u003cspan\r\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\r\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\r\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#topics\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\r\n    \u003c\/span\u003e        \r\n    \r\n\u003c\/h2\u003e\r\n\u003cul\u003e\n\u003cli\u003e@Serializable data classes for routes\u003c\/li\u003e\n\u003cli\u003eNavHost setup with type-safe routes\u003c\/li\u003e\n\u003cli\u003eNavigation with arguments\u003c\/li\u003e\n\u003cli\u003eBest practices and gotchas\u003c\/li\u003e\n\u003cli\u003e\u003c\/li\u003e\n\u003c\/ul\u003e\n\r\n\u003ch2 class=\u0022relative group\u0022\u003eLibrary Requirement \r\n    \u003cdiv id=\u0022library-requirement\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\r\n    \r\n    \u003cspan\r\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\r\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\r\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#library-requirement\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\r\n    \u003c\/span\u003e        \r\n    \r\n\u003c\/h2\u003e\r\n\u003cul\u003e\n\u003cli\u003eNavigation Compose version \u0026gt;= 2.8.0 and version \u0026lt; 3.0.0 (Updated June 2025, Google have released a new Navigation3 Library for Jetpack Compose which is now in alpha with better backstack handling and some breaking changes.)\u003c\/li\u003e\n\u003cli\u003eKotlinX.Serialization\u003c\/li\u003e\n\u003c\/ul\u003e",
-    "inLanguage": "en",
-    "url" : "\/\/localhost:1313\/posts\/type-safe-navigation-compose\/type-safe-navigation-compose\/",
+    "abstract": "\u003cblockquote\u003e\n\u003ch2 class=\u0022relative group\u0022\u003eThis Post is being built \r\n    \u003cdiv id=\u0022this-post-is-being-built\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\r\n    \r\n    \u003cspan\r\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\r\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700\u0022\r\n            style=\u0022text-decoration-line: none !important;\u0022 href=\u0022#this-post-is-being-built\u0022 aria-label=\u0022จุดยึด\u0022\u003e#\u003c\/a\u003e\r\n    \u003c\/span\u003e        \r\n    \r\n\u003c\/h2\u003e\u003c\/blockquote\u003e\n\u003cp\u003eBy using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph\u003c\/p\u003e",
+    "inLanguage": "th",
+    "url" : "\/\/localhost:1313\/th\/posts\/deep-link-fcm\/",
     "author" : {
       "@type": "Person",
       "name": "Jojo Chalanthorn"
     },
-    "copyrightYear": "2025",
-    "dateCreated": "2025-05-21T16:00:28\u002b08:00",
-    "datePublished": "2025-05-21T16:00:28\u002b08:00",
+    "copyrightYear": "2024",
+    "dateCreated": "2024-12-21T16:00:28\u002b08:00",
+    "datePublished": "2024-12-21T16:00:28\u002b08:00",
     
-    "dateModified": "2025-05-21T16:00:28\u002b08:00",
+    "dateModified": "2024-12-21T16:00:28\u002b08:00",
     
-    
+    "keywords": ["android","compose","navigation","deep-links","fcm"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "80"
+    "wordCount": "226"
   }]
   </script>
 
@@ -169,7 +174,7 @@
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
-        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>ข้ามไปยังเนื้อหาหลัก</a>
   </div>
   
   
@@ -180,7 +185,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Jojonosaurus</a>
+            <a href="/th/" class="text-base font-medium text-gray-500 hover:text-gray-900">Jojonosaurus</a>
             
 
         </nav>
@@ -189,7 +194,7 @@
             
             
             
-  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/th/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="Posts">
         Blog
@@ -268,6 +273,41 @@
             
 
             
+<div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    <span class="ltr:mr-1 rtl:ml-1">
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+  </span>
+
+
+    </span>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">TH</div>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+        <a href="/posts/deep-link-fcm/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">
+            EN
+          </p>
+        </a>
+        
+        <a href="/th/posts/deep-link-fcm/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">
+            TH
+          </p>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
             
@@ -320,6 +360,41 @@
             <span></span>
 
             
+<div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    <span class="ltr:mr-1 rtl:ml-1">
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+  </span>
+
+
+    </span>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">TH</div>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+        <a href="/posts/deep-link-fcm/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">
+            EN
+          </p>
+        </a>
+        
+        <a href="/th/posts/deep-link-fcm/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm">
+            TH
+          </p>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
             
@@ -399,7 +474,7 @@
 
                     
   <li class="mt-1">
-    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/th/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="Posts">
             Blog
@@ -533,7 +608,7 @@
   <li class="hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/"
+      href="/th/"
       >Jojonosaurus</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
@@ -542,7 +617,7 @@
   <li class="inline">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/"
+      href="/th/posts/"
       >Posts</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
@@ -551,8 +626,8 @@
   <li class="hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/type-safe-navigation-compose/type-safe-navigation-compose/"
-      >Type-Safe Navigation in Jetpack Compose</a
+      href="/th/posts/deep-link-fcm/"
+      >🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -561,7 +636,7 @@
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Type-Safe Navigation in Jetpack Compose
+      🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -606,16 +681,10 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-05-21T16:00:28&#43;08:00">21 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span>80 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+  <time datetime="2024-12-21T16:00:28&#43;08:00">21 ธันวาคม 2024</time><span class="px-2 text-primary-500">&middot;</span><span>226 คำ</span><span class="px-2 text-primary-500">&middot;</span><span title="ใช้เวลาอ่าน">2 นาที</span>
   
 
   
-  
-  <span class="pl-2"><span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Draft
-  </span>
-</span></span>
   
 </div>
 
@@ -661,7 +730,7 @@
   <div class="place-self-center">
     
     <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
-      Author
+      ผู้เขียน
     </div>
     <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       Jojo Chalanthorn
@@ -718,15 +787,20 @@
          <details open id="TOCView" class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
+    หัวข้อเนื้อหา
   </summary>
   <div
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#what-youll-learn">What You&rsquo;ll Learn</a></li>
-    <li><a href="#topics">Topics</a></li>
-    <li><a href="#library-requirement">Library Requirement</a></li>
+    <li><a href="#this-post-is-being-built">This Post is being built</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#url-parameters">Url Parameters</a></li>
+    <li><a href="#using-something">Using Something</a>
+      <ul>
+        <li><a href="#what-if-the-uri-is-in-different-format">What if the Uri is in different format?</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -734,15 +808,20 @@
 <details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
   <summary
     class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
+    หัวข้อเนื้อหา
   </summary>
   <div
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#what-youll-learn">What You&rsquo;ll Learn</a></li>
-    <li><a href="#topics">Topics</a></li>
-    <li><a href="#library-requirement">Library Requirement</a></li>
+    <li><a href="#this-post-is-being-built">This Post is being built</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#url-parameters">Url Parameters</a></li>
+    <li><a href="#using-something">Using Something</a>
+      <ul>
+        <li><a href="#what-if-the-uri-is-in-different-format">What if the Uri is in different format?</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -762,8 +841,15 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        100 - This article is part of a series.
+        deep-link-compose-fcm - บทความในชุดเดียวกัน
     </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        ตอนที่ : บทความนี้
+    </div>
     
     
 
@@ -773,56 +859,136 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          
-<h2 class="relative group">What You&rsquo;ll Learn 
-    <div id="what-youll-learn" class="anchor"></div>
+          <blockquote>
+<h2 class="relative group">This Post is being built 
+    <div id="this-post-is-being-built" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-youll-learn" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#this-post-is-being-built" aria-label="จุดยึด">#</a>
     </span>        
     
-</h2>
-<ul>
-<li>Setting up type-safe navigation with Kotlin Serialization</li>
-<li>Creating serializable route classes</li>
-<li>Navigation between screens</li>
-<li>Benefits over string-based navigation</li>
-</ul>
+</h2></blockquote>
+<p>By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph</p>
 
-<h2 class="relative group">Topics 
-    <div id="topics" class="anchor"></div>
+<h2 class="relative group">Prerequisites 
+    <div id="prerequisites" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#topics" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#prerequisites" aria-label="จุดยึด">#</a>
     </span>        
     
 </h2>
 <ul>
-<li>@Serializable data classes for routes</li>
-<li>NavHost setup with type-safe routes</li>
-<li>Navigation with arguments</li>
-<li>Best practices and gotchas</li>
-<li></li>
-</ul>
-
-<h2 class="relative group">Library Requirement 
-    <div id="library-requirement" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#library-requirement" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<ul>
-<li>Navigation Compose version &gt;= 2.8.0 and version &lt; 3.0.0 (Updated June 2025, Google have released a new Navigation3 Library for Jetpack Compose which is now in alpha with better backstack handling and some breaking changes.)</li>
 <li>KotlinX.Serialization</li>
+<li>Navigation Compose</li>
+<li>Navigating Deep Links with Intents</li>
 </ul>
+
+<h2 class="relative group">Url Parameters 
+    <div id="url-parameters" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#url-parameters" aria-label="จุดยึด">#</a>
+    </span>        
+    
+</h2>
+<p>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="image info" src="../res/url_scheme.png" />
+
+  
+</figure>
+</p>
+
+<h2 class="relative group">Using Something 
+    <div id="using-something" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#using-something" aria-label="จุดยึด">#</a>
+    </span>        
+    
+</h2>
+<p>The following <code>DetailPage</code> class is used as an example for the navigation</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="nd">@Serializable</span>
+</span></span><span class="line"><span class="cl"><span class="k">data</span> <span class="k">class</span> <span class="nc">DetailPage</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@SerialName</span><span class="p">(</span><span class="s2">&#34;title_name&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">title</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@SerialName</span><span class="p">(</span><span class="s2">&#34;sub_title&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">subTitle</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>If you want the <code>navDeepLink</code> to parse your URI, you should put it in this format</p>
+<p><code>appName://DetailPage/{title_name}/{id}?sub_title={sub_title}</code></p></blockquote>
+<p>In the compose navigation the code will look like</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">composable</span><span class="p">&lt;</span><span class="n">DetailPage</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deepLinks</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">&lt;</span><span class="n">DetailPage</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">basePath</span> <span class="p">=</span> <span class="s2">&#34;appName://DetailPage&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div>
+<h3 class="relative group">What if the Uri is in different format? 
+    <div id="what-if-the-uri-is-in-different-format" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#what-if-the-uri-is-in-different-format" aria-label="จุดยึด">#</a>
+    </span>        
+    
+</h3>
+<p>For example, you want to extract the id and name pattern from the uri or using custom uri altogether. together, you might want to write a custom <code>uriPattern</code> in the NavDeepLink.navDeepLink API</p>
+<!-- It looks difficult to build DeepLinks such as example://full_name/{first_name}/{last_name}/edit -->
+<p>It can be put together as</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">composable</span><span class="p">&lt;</span><span class="n">DetailPage</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deepLinks</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">&lt;</span><span class="n">DetailPage</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">basePath</span> <span class="p">=</span> <span class="s2">&#34;appName://DetailPage&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line hl"><span class="cl">        <span class="n">uriPattern</span> <span class="p">=</span>  <span class="s2">&#34;appName://{id}_{title_name}?sub_title={sub_title}&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">val</span> <span class="py">args</span> <span class="p">=</span> <span class="k">it</span><span class="p">.</span><span class="n">toRoute</span><span class="p">&lt;</span><span class="n">DetailPage</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Then args can be retrieve using</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="line"><span class="cl"><span class="n">Or</span> <span class="n">even</span> <span class="n">create</span> <span class="n">something</span> <span class="n">difficult</span> <span class="n">to</span> <span class="n">build</span> <span class="n">like</span>
+</span></span><span class="line"><span class="cl"><span class="n">composable</span><span class="p">&lt;</span><span class="n">DetailPage</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deepLinks</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">&lt;</span><span class="n">DetailPage</span><span class="p">&gt;(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">basePath</span> <span class="p">=</span> <span class="s2">&#34;appName://DetailPage&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uriPattern</span> <span class="p">=</span>  <span class="s2">&#34;example://full_name/{first_name}/{last_name}/edit&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>[!NOTE]
+This uriPattern might not be type safe, but it offers flexibility for those in need</p></blockquote>
 
           
           
@@ -836,8 +1002,15 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        100 - This article is part of a series.
+        deep-link-compose-fcm - บทความในชุดเดียวกัน
     </summary>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+        ตอนที่ : บทความนี้
+    </div>
     
     
 
@@ -852,9 +1025,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/&amp;title=Type-Safe%20Navigation%20in%20Jetpack%20Compose"
-      title="Share on LinkedIn"
-      aria-label="Share on LinkedIn"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/th/posts/deep-link-fcm/&amp;title=%f0%9f%9a%a7Integrating%20Deep%20Links%20with%20Type-Safe%20Navigation%20Compose%20%28and%20custom%20parsing%29%20and%20fcm"
+      title="แชร์บน LinkedIn"
+      aria-label="แชร์บน LinkedIn"
       >
       
 
@@ -871,9 +1044,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/&amp;text=Type-Safe%20Navigation%20in%20Jetpack%20Compose"
-      title="Tweet on Twitter"
-      aria-label="Tweet on Twitter"
+      href="https://twitter.com/intent/tweet/?url=//localhost:1313/th/posts/deep-link-fcm/&amp;text=%f0%9f%9a%a7Integrating%20Deep%20Links%20with%20Type-Safe%20Navigation%20Compose%20%28and%20custom%20parsing%29%20and%20fcm"
+      title="ทวีตบน Twitter"
+      aria-label="ทวีตบน Twitter"
       >
       
 
@@ -889,9 +1062,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/&amp;resubmit=true&amp;title=Type-Safe%20Navigation%20in%20Jetpack%20Compose"
-      title="Share via WhatsApp"
-      aria-label="Share via WhatsApp"
+      href="https://api.whatsapp.com/send?text=//localhost:1313/th/posts/deep-link-fcm/&amp;resubmit=true&amp;title=%f0%9f%9a%a7Integrating%20Deep%20Links%20with%20Type-Safe%20Navigation%20Compose%20%28and%20custom%20parsing%29%20and%20fcm"
+      title="แชร์ทาง WhatsApp"
+      aria-label="แชร์ทาง WhatsApp"
       >
       
 
@@ -908,9 +1081,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/&amp;description=Type-Safe%20Navigation%20in%20Jetpack%20Compose"
-      title="Pin on Pinterest"
-      aria-label="Pin on Pinterest"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=//localhost:1313/th/posts/deep-link-fcm/&amp;description=%f0%9f%9a%a7Integrating%20Deep%20Links%20with%20Type-Safe%20Navigation%20Compose%20%28and%20custom%20parsing%29%20and%20fcm"
+      title="ปักหมุดบน Pinterest"
+      aria-label="ปักหมุดบน Pinterest"
       >
       
 
@@ -927,9 +1100,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/&amp;resubmit=true&amp;title=Type-Safe%20Navigation%20in%20Jetpack%20Compose"
-      title="Submit to Reddit"
-      aria-label="Submit to Reddit"
+      href="https://reddit.com/submit/?url=//localhost:1313/th/posts/deep-link-fcm/&amp;resubmit=true&amp;title=%f0%9f%9a%a7Integrating%20Deep%20Links%20with%20Type-Safe%20Navigation%20Compose%20%28and%20custom%20parsing%29%20and%20fcm"
+      title="โพสต์บน Reddit"
+      aria-label="โพสต์บน Reddit"
       >
       
 
@@ -946,9 +1119,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/&amp;quote=Type-Safe%20Navigation%20in%20Jetpack%20Compose"
-      title="Share on Facebook"
-      aria-label="Share on Facebook"
+      href="https://www.facebook.com/sharer/sharer.php?u=//localhost:1313/th/posts/deep-link-fcm/&amp;quote=%f0%9f%9a%a7Integrating%20Deep%20Links%20with%20Type-Safe%20Navigation%20Compose%20%28and%20custom%20parsing%29%20and%20fcm"
+      title="แชร์บน Facebook"
+      aria-label="แชร์บน Facebook"
       >
       
 
@@ -965,9 +1138,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=//localhost:1313/posts/type-safe-navigation-compose/type-safe-navigation-compose/&amp;subject=Type-Safe%20Navigation%20in%20Jetpack%20Compose"
-      title="Send via email"
-      aria-label="Send via email"
+      href="mailto:?body=//localhost:1313/th/posts/deep-link-fcm/&amp;subject=%f0%9f%9a%a7Integrating%20Deep%20Links%20with%20Type-Safe%20Navigation%20Compose%20%28and%20custom%20parsing%29%20and%20fcm"
+      title="ส่งทางอีเมล"
+      aria-label="ส่งทางอีเมล"
       >
       
 
@@ -993,9 +1166,12 @@
           
           
         
+          
+          
+        
       <script>
-        var oid = "views_posts\\type-safe-navigation-compose\\type-safe-navigation-compose.md"
-        var oid_likes = "likes_posts\\type-safe-navigation-compose\\type-safe-navigation-compose.md"
+        var oid = "views_posts\\deep-link-fcm.md"
+        var oid_likes = "likes_posts\\deep-link-fcm.md"
       </script>
       
       
@@ -1007,43 +1183,6 @@
 
     
   
-    
-    
-    
-    <div class="pt-8">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
-      <div class="flex justify-between pt-3">
-        <span>
-          
-            <a class="flex group mr-3" href="/posts/deep-link-fcm/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2024-12-21T16:00:28&#43;08:00">21 December 2024</time>
-                  
-                </span>
-              </span>
-            </a>
-          
-        </span>
-        <span>
-          
-        </span>
-      </div>
-    </div>
-  
 
 
     
@@ -1053,7 +1192,7 @@
       <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
   <a href="#the-top"
     class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-    aria-label="Scroll to top" title="Scroll to top">
+    aria-label="เลื่อนขึ้นด้านบน" title="เลื่อนขึ้นด้านบน">
     &uarr;
   </a>
 </div>
@@ -1065,7 +1204,7 @@
       <ul class="flex flex-col list-none sm:flex-row">
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/tags/"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/th/tags/"
             title="Tags">
             
             Tags
@@ -1092,7 +1231,7 @@
     <p class="text-xs text-neutral-500 dark:text-neutral-400">
       
       
-      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+      สร้างด้วย <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
         href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
         href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
     </p>
@@ -1117,7 +1256,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="//localhost:1313/"
+  data-url="//localhost:1313/th/"
   style="z-index:500"
 >
   <div
@@ -1140,14 +1279,14 @@
           type="search"
           id="search-query"
           class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
-          placeholder="Search"
+          placeholder="ค้นหา"
           tabindex="0"
         />
       </form>
       <button
         id="close-search-button"
         class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-        title="Close (Esc)"
+        title="ปิด (Esc)"
       >
         
 
