@@ -1,6 +1,6 @@
 ---
 date: '2025-06-11T19:55:28+08:00'
-draft: true
+draft: false
 title: "Get All gradle Package Dependencies for MAS Analysis"
 series_order: 1  # 2, 3
 tags: ["android", "compose", "build", "gradle"]
