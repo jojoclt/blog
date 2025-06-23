@@ -7,11 +7,6 @@ content:
     label: Posts (EN)
     path: content/en/posts
     type: collection
-  - name: posts-th
-    label: Posts (TH)
-    path: content/th/posts
-    type: collection
-
     view:
       fields: [ title ]
       primary: title
@@ -20,3 +15,18 @@ content:
         search: ''
         sort: title
         order: desc
+        
+  - name: posts-th
+    label: Posts (TH)
+    path: content/th/posts
+    type: collection
+    view:
+      fields: [ title ]
+      primary: title
+      sort: [ date, title ]
+      default:
+        search: ''
+        sort: title
+        order: desc
+
+
