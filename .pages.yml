@@ -14,7 +14,7 @@ content:
   #   type: collection
 
     view:
-      fields: [ title ]
+      fields: [ title, date ]
       primary: title
       sort: [ date, title ]
       default:
