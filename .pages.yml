@@ -3,11 +3,11 @@ media:
   output: media
 
 content:
-  - name: posts
+  - name: posts-en
     label: Posts
-    path: content
+    path: content/en
     type: collection
-  - name: authors
-    label: Authors
-    path: src/_data/authors.json
-    type: file
+  - name: posts-th
+    label: Posts
+    path: content/th
+    type: collection
