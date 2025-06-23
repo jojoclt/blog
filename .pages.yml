@@ -20,10 +20,10 @@ content:
       default:
         sort: title
         order: desc
-      layout: list
-      node:
-        filename: index.md
-        hideDirs: all
+      # layout: list
+      # node:
+      #   filename: index.md
+      #   hideDirs: all
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: string, options: { maxlength: 180 }}
