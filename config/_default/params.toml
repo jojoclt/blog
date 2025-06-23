@@ -13,6 +13,8 @@ enableSearch = true
 enableCodeCopy = true
 
 mainSections = ["posts"]
+smartTOC = true
+smartTOCHideUnfocusedChildren = true
 # robots = ""
 
 [header]

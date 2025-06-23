@@ -24,16 +24,21 @@
 
 
 
+
 &lt;figure&gt;
       &lt;img
-    class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34; fetchpriority=&#34;low&#34; alt=&#34;space-1.jpg&#34;
+    class=&#34;my-0 rounded-md&#34;
+    loading=&#34;lazy&#34;
+    decoding=&#34;async&#34;
+    fetchpriority=&#34;low&#34;
+    alt=&#34;space-1.jpg&#34;
     srcset=&#34;
-      /posts/mas-report/gradle_hu_7c03c26ace6e1f38.png 330w,
-      /posts/mas-report/gradle_hu_9a5268c0b053017.png 660w,
-      /posts/mas-report/gradle_hu_c52474930748ea50.png 1280w&#34;
+      /posts/mas-report/gradle_hu_7c03c26ace6e1f38.png  330w,
+      /posts/mas-report/gradle_hu_9a5268c0b053017.png  660w,
+      /posts/mas-report/gradle_hu_c52474930748ea50.png 1280w
+    &#34;
     data-zoom-src=&#34;//localhost:1313/posts/mas-report/gradle.png&#34;
-    src=&#34;//localhost:1313/posts/mas-report/gradle.png&#34;
-  /&gt;
+    src=&#34;//localhost:1313/posts/mas-report/gradle.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -54,6 +59,16 @@
     </item>
     
     <item>
+      <title>Why Destructuring is Dangerous in Compose</title>
+      <link>//localhost:1313/posts/post-lite-one/</link>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/post-lite-one/</guid>
+      <description>Despite the official documentation says the syntax are equivalent, but it is not, here&amp;rsquo;s why.</description>
+      
+    </item>
+    
+    <item>
       <title>Type-Safe Navigation in Jetpack Compose</title>
       <link>//localhost:1313/posts/type-safe-navigation-compose/</link>
       <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
@@ -64,8 +79,7 @@
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#what-youll-learn&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#what-youll-learn&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
@@ -81,8 +95,7 @@
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#topics&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#topics&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
@@ -99,8 +112,7 @@
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#library-requirement&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#library-requirement&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
@@ -123,8 +135,7 @@
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#this-post-is-being-built&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#this-post-is-being-built&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;&lt;/blockquote&gt;
@@ -143,24 +154,13 @@
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;
-            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;        
     
 &lt;/h2&gt;
 &lt;p&gt;Hello Navigation
 Scaffold, NavHost
 Nested Graph&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Super cool article that I wrote</title>
-      <link>//localhost:1313/posts/post-lite-one/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/posts/post-lite-one/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
       
     </item>
     

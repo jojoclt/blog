@@ -7,15 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Jojo Chalanthorn</copyright>
-    <lastBuildDate>Sun, 04 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Super cool article that I wrote</title>
+      <title>Why Destructuring is Dangerous in Compose</title>
       <link>//localhost:1313/posts/post-lite-one/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/posts/post-lite-one/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
+      <description>Despite the official documentation says the syntax are equivalent, but it is not, here&amp;rsquo;s why.</description>
       
     </item>
     
