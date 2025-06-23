@@ -23,7 +23,7 @@ content:
       layout: tree
       node:
         filename: index.md
-        hideDirs: nodes # This will hide all subfolders, even if they do not contain a node
+        hideDirs: others
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: string, options: { maxlength: 180 }}
