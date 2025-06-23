@@ -20,7 +20,7 @@ content:
       default:
         sort: title
         order: desc
-      layout: tree
+      layout: list
       node:
         filename: index.md
         hideDirs: all
