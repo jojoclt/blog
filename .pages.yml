@@ -12,21 +12,15 @@ content:
       primary: title
       sort: [ date, title ]
       default:
-        search: ''
         sort: title
         order: desc
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date }
         
   - name: posts-th
     label: Posts (TH)
     path: content/th/posts
     type: collection
-    view:
-      fields: [ title ]
-      primary: title
-      sort: [ date, title ]
-      default:
-        search: ''
-        sort: title
-        order: desc
 
 
