@@ -5,7 +5,7 @@ media:
 content:
   - name: posts
     label: Posts
-    path: content/posts
+    path: content
     type: collection
   - name: authors
     label: Authors
