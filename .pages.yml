@@ -5,7 +5,7 @@ media:
 content:
   - name: posts-en
     label: Posts (EN)
-    path: content/en/
+    path: content/en
     type: collection
         
   # - name: posts-th
