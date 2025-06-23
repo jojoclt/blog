@@ -4,10 +4,10 @@ media:
 
 content:
   - name: posts-en
-    label: Posts
+    label: Posts (EN)
     path: content/en
     type: collection
   - name: posts-th
-    label: Posts
+    label: Posts (TH)
     path: content/th
     type: collection
