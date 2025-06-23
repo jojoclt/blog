@@ -12,11 +12,11 @@ content:
     path: content/th/posts
     type: collection
 
-view:
-  fields: [ title ]
-  primary: title
-  sort: [ date, title ]
-  default:
-    search: ''
-    sort: title
-    order: desc
+    view:
+      fields: [ title ]
+      primary: title
+      sort: [ date, title ]
+      default:
+        search: ''
+        sort: title
+        order: desc
