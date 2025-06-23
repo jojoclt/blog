@@ -11,3 +11,12 @@ content:
     label: Posts (TH)
     path: content/th/posts
     type: collection
+
+view:
+  fields: [ title ]
+  primary: title
+  sort: [ date, title ]
+  default:
+    search: ''
+    sort: title
+    order: desc
