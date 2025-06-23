@@ -1,0 +1,13 @@
+media:
+  input: assets/img
+  output: media
+
+content:
+  - name: posts
+    label: Posts
+    path: content/posts
+    type: collection
+  - name: authors
+    label: Authors
+    path: src/_data/authors.json
+    type: file
