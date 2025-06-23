@@ -7,6 +7,12 @@ content:
     label: Posts (EN)
     path: content/en/posts
     type: collection
+        
+  # - name: posts-th
+  #   label: Posts (TH)
+  #   path: content/th/posts
+  #   type: collection
+
     view:
       fields: [ title ]
       primary: title
@@ -17,10 +23,5 @@ content:
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: date, label: Date, type: date }
-        
-  - name: posts-th
-    label: Posts (TH)
-    path: content/th/posts
-    type: collection
 
 
