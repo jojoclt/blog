@@ -15,11 +15,7 @@ enableCodeCopy = true
 mainSections = ["posts"]
 smartTOC = true
 smartTOCHideUnfocusedChildren = true
-
-[services]
-  [services.googleAnalytics]
-    id = "G-JVHY8G54NJ"
-    
+  
 # robots = ""
 
 [header]
@@ -49,7 +45,7 @@ smartTOCHideUnfocusedChildren = true
   showLikes = false
   showDateUpdated = false
   showAuthor = true
-  showHero = false
+  showHero = true
   heroStyle = "basic" # valid options: basic, big, background
   showBreadcrumbs = true
   showDraftLabel = true
