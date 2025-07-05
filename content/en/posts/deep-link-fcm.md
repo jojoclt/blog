@@ -1,6 +1,6 @@
 ---
 date: '2024-12-21T16:00:28+08:00'
-draft: false
+draft: true
 title: '🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm'
 series: ["deep-link-compose-fcm"]
 seriesOrder: 2  # 2, 3

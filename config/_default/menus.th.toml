@@ -11,27 +11,27 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "Blog"
-  pageRef = "posts"
-  weight = 10
+name = "Blog"
+pageRef = "posts"
+weight = 10
 
-[[main]]
-  identifier = "web"
-  pre = "link"
-  url = "https://nunocoracao.github.io/blowfish/"
-  weight = 40
+# [[main]]
+#   identifier = "web"
+#   pre = "link"
+#   url = "https://nunocoracao.github.io/blowfish/"
+#   weight = 40
 
-[[main]]
-  identifier = "github"
-  pre = "github"
-  url = "https://github.com/nunocoracao/blowfish"
-  weight = 50
+# [[main]]
+#   identifier = "github"
+#   pre = "github"
+#   url = "https://github.com/nunocoracao/blowfish"
+#   weight = 50
 
-[[main]]
-  identifier = "twitter"
-  pre = "twitter"
-  url = "https://twitter.com/burufugu"
-  weight = 60
+# [[main]]
+#   identifier = "twitter"
+#   pre = "twitter"
+#   url = "https://twitter.com/burufugu"
+#   weight = 60
 
 
 # -- Footer Menu --
@@ -39,7 +39,7 @@
 # the copyright notice. Configure as per the main menu above.
 
 
- [[footer]]
-   name = "Tags"
-   pageRef = "tags"
-   weight = 10
+[[footer]]
+name = "Tags"
+pageRef = "tags"
+weight = 10

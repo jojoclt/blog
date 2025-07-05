@@ -15,6 +15,11 @@ enableCodeCopy = true
 mainSections = ["posts"]
 smartTOC = true
 smartTOCHideUnfocusedChildren = true
+
+[services]
+  [services.googleAnalytics]
+    id = "G-JVHY8G54NJ"
+    
 # robots = ""
 
 [header]
@@ -40,11 +45,11 @@ smartTOCHideUnfocusedChildren = true
 
 [article]
   showDate = true
-  #showViews = true
-  #showLikes = true
+  showViews = false
+  showLikes = false
   showDateUpdated = false
   showAuthor = true
-  showHero = true
+  showHero = false
   heroStyle = "basic" # valid options: basic, big, background
   showBreadcrumbs = true
   showDraftLabel = true
@@ -57,7 +62,7 @@ smartTOCHideUnfocusedChildren = true
   invertPagination = false
   showReadingTime = true
   showTableOfContents = true
-  showTaxonomies = false 
+  showTaxonomies = true 
   showAuthorsBadges = false 
   showWordCount = true
   showSummary = true

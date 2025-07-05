@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Jojo Chalanthorn</copyright>
-    <lastBuildDate>Wed, 11 Jun 2025 19:55:28 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android</title>
       <link>//localhost:1313/tags/android/</link>
-      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/tags/android/</guid>
       <description></description>
@@ -20,19 +20,9 @@
     </item>
     
     <item>
-      <title>Build</title>
-      <link>//localhost:1313/tags/build/</link>
-      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
-      
-      <guid>//localhost:1313/tags/build/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Compose</title>
       <link>//localhost:1313/tags/compose/</link>
-      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/tags/compose/</guid>
       <description></description>
@@ -42,7 +32,7 @@
     <item>
       <title>Gradle</title>
       <link>//localhost:1313/tags/gradle/</link>
-      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/tags/gradle/</guid>
       <description></description>
@@ -95,36 +85,6 @@
       <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
       
       <guid>//localhost:1313/tags/navigation/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Ipsum</title>
-      <link>//localhost:1313/tags/ipsum/</link>
-      <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/tags/ipsum/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Lorem</title>
-      <link>//localhost:1313/tags/lorem/</link>
-      <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/tags/lorem/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Post</title>
-      <link>//localhost:1313/tags/post/</link>
-      <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/tags/post/</guid>
       <description></description>
       
     </item>

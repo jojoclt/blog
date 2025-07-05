@@ -1,28 +1,42 @@
 ---
-title: Get All gradle Package Dependencies for MAS Analysis
-date: 2025-06-11
+title: Extract Gradle Dependencies for Mobile App Security (MAS)
+date: 2025-07-05
+tags: ["android", "compose", "gradle"]
+
 ---
-| ![space-1.jpg](gradle.png) |
-| --- |
-| _Version_ |
-| As we migrate to version catalog, it is now easier than ever to share the package depencies between submodules, but it is now hard to extract those data back for the Mobile Application Security Package Analysis. |
+## Introduction
+
+I had the chance to work on an app that required a security test based on OWASP guidelines. Based on the requirement, I was asked to export a list of all the dependencies used in the app in the format `name|version|source`. Since I was using version.toml with Gradle’s Version Catalog, getting everything into that format wasn’t straightforward. At first, I just used an LLM to help with the formatting—but along the way, I discovered a much simpler approach worth sharing.
+
+ As the Gradle Version Catalog has been streamlined, managing and sharing dependencies across submodules has become so much easier, but it is now harder to present those dependencies version in a simple manner those data back for the Mobile Application Security Package Analysis.
 
 But there is actually an easy way to do that, which can be achieve by a few clicks in Android Studio IDE.
 
-You can run `gradle :app:androidDependencies` in Android Studio to get all the compiled dependencies use in the project, this will listed all the dependencies graph under that aar packages. ![alt text](gradle_dep.png)
+### Method 1: From Gradle CLI
 
-Or it can be get from `File` > `Project Structure` > `Dependencies` ![alt text](project_structure.png)
+You can run `gradle :app:androidDependencies` in Android Studio to get all the compiled dependencies use in the project, this will listed all the dependencies graph under that aar packages with respect to build variants.
 
-On the right hand side we can see the `Resolved Dependencies` and each build flavors (More on Build Variants here...).
+![Dependencies](gradle_dep.png)
 
-For example I will choose `devPermRelease`
+### Method 2: From Android Studio
+
+Or it can be get from `File` > `Project Structure` > `Dependencies`
+
+![Project Structure](project_structure.png)
+
+On the right hand side we can see the `Resolved Dependencies` and each build flavors. For example, I will choose `devPermRelease`
+
+<!-- more on build variants here -->
 
 ![Right Tab Enlarged](image.png)
 
-You can see all the resolved dependencies here, you can even highlight all the dependencies in that group and use _Copy Shortcuts_ on your Operating System (Right Click doesn't seemed to work here) and then paste it in your favourite text editor.
+You can see all the resolved dependencies here, you can even highlight all the dependencies in that group and use `Copy Shortcuts` on your Operating System (Right Click doesn't seemed to work here) and then paste it in your favourite text editor.
 
-![Copied Dependencies Example](image-1.png)
+|![Copied Dependencies Example](image-1.png)|
+| :-: |
+| Example of copied dependencies |
 
-### Key Takeaways
+## Key Takeaways
 
-Learned how to get the dependencies list on android exported in a text format for report usages.
+- Learned how to export a list of dependencies from Gradle Version Catalog in a text format, useful for security reports and audits.
+- This method also works if you need to export dependencies for a specific build variant or product flavor.

@@ -7,17 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Jojo Chalanthorn</copyright>
-    <lastBuildDate>Wed, 11 Jun 2025 19:55:28 +0800</lastBuildDate><atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Android Development</title>
-      <link>//localhost:1313/categories/android-development/</link>
-      <pubDate>Wed, 11 Jun 2025 19:55:28 +0800</pubDate>
-      
-      <guid>//localhost:1313/categories/android-development/</guid>
-      <description></description>
-      
-    </item>
+    <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Blog</title>
@@ -35,6 +25,16 @@
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/categories/post/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Android Development</title>
+      <link>//localhost:1313/categories/android-development/</link>
+      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
+      
+      <guid>//localhost:1313/categories/android-development/</guid>
       <description></description>
       
     </item>

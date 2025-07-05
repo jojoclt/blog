@@ -4,7 +4,7 @@
 
   <url>
     <loc>//localhost:1313/tags/android/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -19,46 +19,8 @@
     />
   </url>
   <url>
-    <loc>//localhost:1313/categories/android-development/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="th"
-      href="//localhost:1313/th/categories/android-development/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="//localhost:1313/categories/android-development/"
-    />
-  </url>
-  <url>
-    <loc>//localhost:1313/tags/build/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/categories/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="th"
-      href="//localhost:1313/th/categories/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="//localhost:1313/categories/"
-    />
-  </url>
-  <url>
     <loc>//localhost:1313/tags/compose/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -74,19 +36,19 @@
   </url>
   <url>
     <loc>//localhost:1313/posts/mas-report/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//localhost:1313/tags/gradle/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -102,7 +64,7 @@
   </url>
   <url>
     <loc>//localhost:1313/posts/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -118,7 +80,7 @@
   </url>
   <url>
     <loc>//localhost:1313/tags/</loc>
-    <lastmod>2025-06-11T19:55:28+08:00</lastmod>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -137,6 +99,22 @@
     <lastmod>2025-06-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="th"
+      href="//localhost:1313/th/categories/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="//localhost:1313/categories/"
+    />
   </url>
   <url>
     <loc>//localhost:1313/tags/performance/</loc>
@@ -161,6 +139,22 @@
     <lastmod>2025-06-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//localhost:1313/categories/android-development/</loc>
+    <lastmod>2025-05-21T16:00:28+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="th"
+      href="//localhost:1313/th/categories/android-development/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="//localhost:1313/categories/android-development/"
+    />
   </url>
   <url>
     <loc>//localhost:1313/series/deep-link-compose-fcm/</loc>
@@ -267,30 +261,6 @@
   <url>
     <loc>//localhost:1313/posts/bottom-nav-shared-transition/</loc>
     <lastmod>2024-11-02T17:20:49+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/tags/ipsum/</loc>
-    <lastmod>2021-09-04T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/tags/lorem/</loc>
-    <lastmod>2021-09-04T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/tags/post/</loc>
-    <lastmod>2021-09-04T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//localhost:1313/posts/post-lite-four/</loc>
-    <lastmod>2021-09-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

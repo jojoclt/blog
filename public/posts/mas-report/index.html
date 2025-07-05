@@ -12,11 +12,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Get All gradle Package Dependencies for MAS Analysis &middot; Jojonosaurus</title>
-  <meta name="title" content="Get All gradle Package Dependencies for MAS Analysis &middot; Jojonosaurus" />
+  <title>Extract Gradle Dependencies for Mobile App Security (MAS) &middot; Jojonosaurus</title>
+  <meta name="title" content="Extract Gradle Dependencies for Mobile App Security (MAS) &middot; Jojonosaurus" />
   
   <meta name="description" content="My awesome website" />
-  <meta name="keywords" content="android, compose, build, gradle, " />
+  <meta name="keywords" content="android, compose, gradle, " />
   
   
   <link rel="canonical" href="//localhost:1313/posts/mas-report/" />
@@ -73,35 +73,34 @@
   
   <meta property="og:url" content="//localhost:1313/posts/mas-report/">
   <meta property="og:site_name" content="Jojonosaurus">
-  <meta property="og:title" content="Get All gradle Package Dependencies for MAS Analysis">
-  <meta property="og:description" content="Version As we migrate to version catalog, it is now easier than ever to share the package depencies between submodules, but it is now hard to extract those data back for the Mobile Application Security Package Analysis. But there is actually an easy way to do that, which can be achieve by a few clicks in Android Studio IDE.">
+  <meta property="og:title" content="Extract Gradle Dependencies for Mobile App Security (MAS)">
+  <meta property="og:description" content="Introduction #I had the chance to work on an app that required a security test based on OWASP guidelines. Based on the requirement, I was asked to export a list of all the dependencies used in the app in the format name|version|source. Since I was using version.toml with Gradle’s Version Catalog, getting everything into that format wasn’t straightforward. At first, I just used an LLM to help with the formatting—but along the way, I discovered a much simpler approach worth sharing.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-06-11T19:55:28+08:00">
-    <meta property="article:modified_time" content="2025-06-11T19:55:28+08:00">
+    <meta property="article:published_time" content="2025-07-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-05T00:00:00+00:00">
     <meta property="article:tag" content="Android">
     <meta property="article:tag" content="Compose">
-    <meta property="article:tag" content="Build">
     <meta property="article:tag" content="Gradle">
+    <meta property="og:image" content="//localhost:1313/posts/mas-report/featured.webp">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Get All gradle Package Dependencies for MAS Analysis">
-  <meta name="twitter:description" content="Version As we migrate to version catalog, it is now easier than ever to share the package depencies between submodules, but it is now hard to extract those data back for the Mobile Application Security Package Analysis. But there is actually an easy way to do that, which can be achieve by a few clicks in Android Studio IDE.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="//localhost:1313/posts/mas-report/featured.webp">
+  <meta name="twitter:title" content="Extract Gradle Dependencies for Mobile App Security (MAS)">
+  <meta name="twitter:description" content="Introduction #I had the chance to work on an app that required a security test based on OWASP guidelines. Based on the requirement, I was asked to export a list of all the dependencies used in the app in the format name|version|source. Since I was using version.toml with Gradle’s Version Catalog, getting everything into that format wasn’t straightforward. At first, I just used an LLM to help with the formatting—but along the way, I discovered a much simpler approach worth sharing.">
 
-    
-  
   
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Get All gradle Package Dependencies for MAS Analysis",
-    "headline": "Get All gradle Package Dependencies for MAS Analysis",
+    "name": "Extract Gradle Dependencies for Mobile App Security (MAS)",
+    "headline": "Extract Gradle Dependencies for Mobile App Security (MAS)",
     
-    "abstract": "\u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003e\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u003cfigure\u003e\r\n      \u003cimg\r\n    class=\u0022my-0 rounded-md\u0022\r\n    loading=\u0022lazy\u0022\r\n    decoding=\u0022async\u0022\r\n    fetchpriority=\u0022low\u0022\r\n    alt=\u0022space-1.jpg\u0022\r\n    srcset=\u0022\r\n      \/posts\/mas-report\/gradle_hu_7c03c26ace6e1f38.png  330w,\r\n      \/posts\/mas-report\/gradle_hu_9a5268c0b053017.png  660w,\r\n      \/posts\/mas-report\/gradle_hu_c52474930748ea50.png 1280w\r\n    \u0022\r\n    data-zoom-src=\u0022\/posts\/mas-report\/gradle.png\u0022\r\n    src=\u0022\/posts\/mas-report\/gradle.png\u0022\u003e\r\n\r\n  \r\n\u003c\/figure\u003e\r\n\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u003cem\u003eVersion\u003c\/em\u003e\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eAs we migrate to version catalog, it is now easier than ever to share the package depencies between submodules, but it is now hard to extract those data back for the Mobile Application Security Package Analysis.\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\u003cp\u003eBut there is actually an easy way to do that, which can be achieve by a few clicks in Android Studio IDE.\u003c\/p\u003e",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eIntroduction \r\n    \u003cdiv id=\u0022introduction\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\r\n    \r\n    \u003cspan\r\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\r\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#introduction\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\r\n    \u003c\/span\u003e        \r\n    \r\n\u003c\/h2\u003e\r\n\u003cp\u003eI had the chance to work on an app that required a security test based on OWASP guidelines. Based on the requirement, I was asked to export a list of all the dependencies used in the app in the format \u003ccode\u003ename|version|source\u003c\/code\u003e. Since I was using version.toml with Gradle’s Version Catalog, getting everything into that format wasn’t straightforward. At first, I just used an LLM to help with the formatting—but along the way, I discovered a much simpler approach worth sharing.\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "\/\/localhost:1313\/posts\/mas-report\/",
     "author" : {
@@ -109,15 +108,15 @@
       "name": "Jojo Chalanthorn"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-06-11T19:55:28\u002b08:00",
-    "datePublished": "2025-06-11T19:55:28\u002b08:00",
+    "dateCreated": "2025-07-05T00:00:00\u002b00:00",
+    "datePublished": "2025-07-05T00:00:00\u002b00:00",
     
-    "dateModified": "2025-06-11T19:55:28\u002b08:00",
+    "dateModified": "2025-07-05T00:00:00\u002b00:00",
     
-    "keywords": ["android","compose","build","gradle"],
+    "keywords": ["android","compose","gradle"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "188"
+    "wordCount": "315"
   }]
   </script>
 
@@ -209,81 +208,6 @@
   
   <p class="text-base font-medium" title="Posts">
     Blog
-  </p>
-</a>
-
-
-
-            
-            
-  <a
-  href="https://nunocoracao.github.io/blowfish/"
-  target="_blank"
-  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-  
-    <span >
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
-
-  </span>
-
-
-    </span>
-  
-  <p class="text-base font-medium" title="">
-    
-  </p>
-</a>
-
-
-
-            
-            
-  <a
-  href="https://github.com/nunocoracao/blowfish"
-  target="_blank"
-  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-  
-    <span >
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-
-  </span>
-
-
-    </span>
-  
-  <p class="text-base font-medium" title="">
-    
-  </p>
-</a>
-
-
-
-            
-            
-  <a
-  href="https://twitter.com/burufugu"
-  target="_blank"
-  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-  
-    <span >
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-
-  </span>
-
-
-    </span>
-  
-  <p class="text-base font-medium" title="">
-    
   </p>
 </a>
 
@@ -439,99 +363,6 @@
 
                     
 
-                    
-  <li class="mt-1">
-  <a
-    href="https://nunocoracao.github.io/blowfish/"
-    
-      target="_blank"
-    
-    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-    
-      <div >
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
-
-  </span>
-
-
-      </div>
-    
-    <p class="text-bg font-bg" title="">
-      
-    </p>
-  </a>
-</li>
-
-
-
-
-                    
-
-                    
-  <li class="mt-1">
-  <a
-    href="https://github.com/nunocoracao/blowfish"
-    
-      target="_blank"
-    
-    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-    
-      <div >
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-
-  </span>
-
-
-      </div>
-    
-    <p class="text-bg font-bg" title="">
-      
-    </p>
-  </a>
-</li>
-
-
-
-
-                    
-
-                    
-  <li class="mt-1">
-  <a
-    href="https://twitter.com/burufugu"
-    
-      target="_blank"
-    
-    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
-    
-      <div >
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-
-  </span>
-
-
-      </div>
-    
-    <p class="text-bg font-bg" title="">
-      
-    </p>
-  </a>
-</li>
-
-
-
-
-                    
-
                 </ul>
                 
                 
@@ -553,15 +384,6 @@
 
 
   <article>
-    
-      
-      
-      
-      
-        
-  
-
-      
     
 
 
@@ -590,7 +412,7 @@
   
   <li class="hidden">
     <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/posts/mas-report/"
-      >Get All gradle Package Dependencies for MAS Analysis</a
+      >Extract Gradle Dependencies for Mobile App Security (MAS)</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -599,7 +421,7 @@
 
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Get All gradle Package Dependencies for MAS Analysis
+        Extract Gradle Dependencies for Mobile App Security (MAS)
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -652,7 +474,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-06-11T19:55:28&#43;08:00">11 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>188 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+      <time datetime="2025-07-05T00:00:00&#43;00:00">5 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>315 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
     
 
     
@@ -662,6 +484,60 @@
   
 
   
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/android/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Android
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/compose/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Compose
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/gradle/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Gradle
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
   
 
   
@@ -774,11 +650,13 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#introduction">Introduction</a>
       <ul>
-        <li><a href="#key-takeaways">Key Takeaways</a></li>
+        <li><a href="#method-1-from-gradle-cli">Method 1: From Gradle CLI</a></li>
+        <li><a href="#method-2-from-android-studio">Method 2: From Android Studio</a></li>
       </ul>
     </li>
+    <li><a href="#key-takeaways">Key Takeaways</a></li>
   </ul>
 </nav>
   </div>
@@ -792,11 +670,13 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#introduction">Introduction</a>
       <ul>
-        <li><a href="#key-takeaways">Key Takeaways</a></li>
+        <li><a href="#method-1-from-gradle-cli">Method 1: From Gradle CLI</a></li>
+        <li><a href="#method-2-from-android-studio">Method 2: From Android Studio</a></li>
       </ul>
     </li>
+    <li><a href="#key-takeaways">Key Takeaways</a></li>
   </ul>
 </nav>
   </div>
@@ -899,48 +779,31 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <table>
-  <thead>
-      <tr>
-          <th style="text-align: center">
-
-
-
-
-
-
-<figure>
-      <img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="low"
-    alt="space-1.jpg"
-    srcset="
-      /posts/mas-report/gradle_hu_7c03c26ace6e1f38.png  330w,
-      /posts/mas-report/gradle_hu_9a5268c0b053017.png  660w,
-      /posts/mas-report/gradle_hu_c52474930748ea50.png 1280w
-    "
-    data-zoom-src="/posts/mas-report/gradle.png"
-    src="/posts/mas-report/gradle.png">
-
-  
-</figure>
-</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><em>Version</em></td>
-      </tr>
-      <tr>
-          <td style="text-align: center">As we migrate to version catalog, it is now easier than ever to share the package depencies between submodules, but it is now hard to extract those data back for the Mobile Application Security Package Analysis.</td>
-      </tr>
-  </tbody>
-</table>
+          
+<h2 class="relative group">Introduction 
+    <div id="introduction" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#introduction" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>I had the chance to work on an app that required a security test based on OWASP guidelines. Based on the requirement, I was asked to export a list of all the dependencies used in the app in the format <code>name|version|source</code>. Since I was using version.toml with Gradle’s Version Catalog, getting everything into that format wasn’t straightforward. At first, I just used an LLM to help with the formatting—but along the way, I discovered a much simpler approach worth sharing.</p>
+<p>As the Gradle Version Catalog has been streamlined, managing and sharing dependencies across submodules has become so much easier, but it is now harder to present those dependencies version in a simple manner those data back for the Mobile Application Security Package Analysis.</p>
 <p>But there is actually an easy way to do that, which can be achieve by a few clicks in Android Studio IDE.</p>
-<p>You can run <code>gradle :app:androidDependencies</code> in Android Studio to get all the compiled dependencies use in the project, this will listed all the dependencies graph under that aar packages.
 
+<h3 class="relative group">Method 1: From Gradle CLI 
+    <div id="method-1-from-gradle-cli" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#method-1-from-gradle-cli" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>You can run <code>gradle :app:androidDependencies</code> in Android Studio to get all the compiled dependencies use in the project, this will listed all the dependencies graph under that aar packages with respect to build variants.</p>
+<p>
 
 
 
@@ -953,7 +816,7 @@
     loading="lazy"
     decoding="async"
     fetchpriority="low"
-    alt="alt text"
+    alt="Dependencies"
     srcset="
       /posts/mas-report/gradle_dep_hu_3589a64f4abb4a6c.png  330w,
       /posts/mas-report/gradle_dep_hu_4f34e2dee8ed32f3.png  660w,
@@ -965,8 +828,18 @@
   
 </figure>
 </p>
-<p>Or it can be get from <code>File</code> &gt; <code>Project Structure</code> &gt; <code>Dependencies</code>
 
+<h3 class="relative group">Method 2: From Android Studio 
+    <div id="method-2-from-android-studio" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#method-2-from-android-studio" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Or it can be get from <code>File</code> &gt; <code>Project Structure</code> &gt; <code>Dependencies</code></p>
+<p>
 
 
 
@@ -979,7 +852,7 @@
     loading="lazy"
     decoding="async"
     fetchpriority="low"
-    alt="alt text"
+    alt="Project Structure"
     srcset="
       /posts/mas-report/project_structure_hu_9ddb32ae48bbdd52.png  330w,
       /posts/mas-report/project_structure_hu_467c253157699e51.png  660w,
@@ -991,8 +864,8 @@
   
 </figure>
 </p>
-<p>On the right hand side we can see the <code>Resolved Dependencies</code> and each build flavors (More on Build Variants here&hellip;).</p>
-<p>For example I will choose <code>devPermRelease</code></p>
+<p>On the right hand side we can see the <code>Resolved Dependencies</code> and each build flavors. For example, I will choose <code>devPermRelease</code></p>
+<!-- more on build variants here -->
 <p>
 
 
@@ -1018,8 +891,11 @@
   
 </figure>
 </p>
-<p>You can see all the resolved dependencies here, you can even highlight all the dependencies in that group and use <em>Copy Shortcuts</em> on your Operating System (Right Click doesn&rsquo;t seemed to work here) and then paste it in your favourite text editor.</p>
-<p>
+<p>You can see all the resolved dependencies here, you can even highlight all the dependencies in that group and use <code>Copy Shortcuts</code> on your Operating System (Right Click doesn&rsquo;t seemed to work here) and then paste it in your favourite text editor.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">
 
 
 
@@ -1043,9 +919,17 @@
 
   
 </figure>
-</p>
+</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Example of copied dependencies</td>
+      </tr>
+  </tbody>
+</table>
 
-<h3 class="relative group">Key Takeaways 
+<h2 class="relative group">Key Takeaways 
     <div id="key-takeaways" class="anchor"></div>
     
     <span
@@ -1053,8 +937,11 @@
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#key-takeaways" aria-label="Anchor">#</a>
     </span>        
     
-</h3>
-<p>Learned how to get the dependencies list on android exported in a text format for report usages.</p>
+</h2>
+<ul>
+<li>Learned how to export a list of dependencies from Gradle Version Catalog in a text format, useful for security reports and audits.</li>
+<li>This method also works if you need to export dependencies for a specific build variant or product flavor.</li>
+</ul>
 
           
           
@@ -1073,7 +960,7 @@
         <a
           target="_blank"
           class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/posts/mas-report/&amp;title=Get%20All%20gradle%20Package%20Dependencies%20for%20MAS%20Analysis"
+          href="https://www.linkedin.com/shareArticle?mini=true&amp;url=//localhost:1313/posts/mas-report/&amp;title=Extract%20Gradle%20Dependencies%20for%20Mobile%20App%20Security%20%28MAS%29"
           title="Share on LinkedIn"
           aria-label="Share on LinkedIn">
           
@@ -1091,7 +978,7 @@
         <a
           target="_blank"
           class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-          href="https://twitter.com/intent/tweet/?url=//localhost:1313/posts/mas-report/&amp;text=Get%20All%20gradle%20Package%20Dependencies%20for%20MAS%20Analysis"
+          href="https://twitter.com/intent/tweet/?url=//localhost:1313/posts/mas-report/&amp;text=Extract%20Gradle%20Dependencies%20for%20Mobile%20App%20Security%20%28MAS%29"
           title="Tweet on Twitter"
           aria-label="Tweet on Twitter">
           
@@ -1108,7 +995,7 @@
         <a
           target="_blank"
           class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-          href="https://api.whatsapp.com/send?text=//localhost:1313/posts/mas-report/&amp;resubmit=true&amp;title=Get%20All%20gradle%20Package%20Dependencies%20for%20MAS%20Analysis"
+          href="https://api.whatsapp.com/send?text=//localhost:1313/posts/mas-report/&amp;resubmit=true&amp;title=Extract%20Gradle%20Dependencies%20for%20Mobile%20App%20Security%20%28MAS%29"
           title="Share via WhatsApp"
           aria-label="Share via WhatsApp">
           
@@ -1126,7 +1013,7 @@
         <a
           target="_blank"
           class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-          href="https://pinterest.com/pin/create/bookmarklet/?url=//localhost:1313/posts/mas-report/&amp;description=Get%20All%20gradle%20Package%20Dependencies%20for%20MAS%20Analysis"
+          href="https://pinterest.com/pin/create/bookmarklet/?url=//localhost:1313/posts/mas-report/&amp;description=Extract%20Gradle%20Dependencies%20for%20Mobile%20App%20Security%20%28MAS%29"
           title="Pin on Pinterest"
           aria-label="Pin on Pinterest">
           
@@ -1144,7 +1031,7 @@
         <a
           target="_blank"
           class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-          href="https://reddit.com/submit/?url=//localhost:1313/posts/mas-report/&amp;resubmit=true&amp;title=Get%20All%20gradle%20Package%20Dependencies%20for%20MAS%20Analysis"
+          href="https://reddit.com/submit/?url=//localhost:1313/posts/mas-report/&amp;resubmit=true&amp;title=Extract%20Gradle%20Dependencies%20for%20Mobile%20App%20Security%20%28MAS%29"
           title="Submit to Reddit"
           aria-label="Submit to Reddit">
           
@@ -1162,7 +1049,7 @@
         <a
           target="_blank"
           class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-          href="https://www.facebook.com/sharer/sharer.php?u=//localhost:1313/posts/mas-report/&amp;quote=Get%20All%20gradle%20Package%20Dependencies%20for%20MAS%20Analysis"
+          href="https://www.facebook.com/sharer/sharer.php?u=//localhost:1313/posts/mas-report/&amp;quote=Extract%20Gradle%20Dependencies%20for%20Mobile%20App%20Security%20%28MAS%29"
           title="Share on Facebook"
           aria-label="Share on Facebook">
           
@@ -1180,7 +1067,7 @@
         <a
           target="_blank"
           class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-          href="mailto:?body=//localhost:1313/posts/mas-report/&amp;subject=Get%20All%20gradle%20Package%20Dependencies%20for%20MAS%20Analysis"
+          href="mailto:?body=//localhost:1313/posts/mas-report/&amp;subject=Extract%20Gradle%20Dependencies%20for%20Mobile%20App%20Security%20%28MAS%29"
           title="Send via email"
           aria-label="Send via email">
           
