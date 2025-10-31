@@ -15,6 +15,11 @@ name = "Blog"
 pageRef = "posts"
 weight = 10
 
+[[main]]
+name = "Resume"
+url = "https://jojonosaur.us/resume"
+weight = 20
+
 # [[main]]
 #   identifier = "web"
 #   pre = "link"
