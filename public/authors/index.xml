@@ -4,10 +4,8 @@
     <title>Authors on Jojonosaurus</title>
     <link>//localhost:1313/authors/</link>
     <description>Recent content in Authors on Jojonosaurus</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <copyright>© 2025 Jojo Chalanthorn</copyright>
     <atom:link href="//localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
-    
   </channel>
 </rss>

@@ -4,90 +4,30 @@
     <title>Tags on Jojonosaurus</title>
     <link>//localhost:1313/tags/</link>
     <description>Recent content in Tags on Jojonosaurus</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <copyright>© 2025 Jojo Chalanthorn</copyright>
-    <lastBuildDate>Sat, 05 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 05 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Android</title>
       <link>//localhost:1313/tags/android/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
-      
       <guid>//localhost:1313/tags/android/</guid>
       <description></description>
-      
     </item>
-    
     <item>
       <title>Compose</title>
       <link>//localhost:1313/tags/compose/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
-      
       <guid>//localhost:1313/tags/compose/</guid>
       <description></description>
-      
     </item>
-    
     <item>
       <title>Gradle</title>
       <link>//localhost:1313/tags/gradle/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
-      
       <guid>//localhost:1313/tags/gradle/</guid>
       <description></description>
-      
     </item>
-    
-    <item>
-      <title>Performance</title>
-      <link>//localhost:1313/tags/performance/</link>
-      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/tags/performance/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Recomposition</title>
-      <link>//localhost:1313/tags/recomposition/</link>
-      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/tags/recomposition/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Deep-Links</title>
-      <link>//localhost:1313/tags/deep-links/</link>
-      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
-      
-      <guid>//localhost:1313/tags/deep-links/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Fcm</title>
-      <link>//localhost:1313/tags/fcm/</link>
-      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
-      
-      <guid>//localhost:1313/tags/fcm/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Navigation</title>
-      <link>//localhost:1313/tags/navigation/</link>
-      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
-      
-      <guid>//localhost:1313/tags/navigation/</guid>
-      <description></description>
-      
-    </item>
-    
   </channel>
 </rss>

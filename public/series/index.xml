@@ -4,20 +4,8 @@
     <title>Series on Jojonosaurus</title>
     <link>//localhost:1313/series/</link>
     <description>Recent content in Series on Jojonosaurus</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <copyright>© 2025 Jojo Chalanthorn</copyright>
-    <lastBuildDate>Wed, 21 May 2025 16:00:28 +0800</lastBuildDate><atom:link href="//localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Deep-Link-Compose-Fcm</title>
-      <link>//localhost:1313/series/deep-link-compose-fcm/</link>
-      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
-      
-      <guid>//localhost:1313/series/deep-link-compose-fcm/</guid>
-      <description></description>
-      
-    </item>
-    
+    <atom:link href="//localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
