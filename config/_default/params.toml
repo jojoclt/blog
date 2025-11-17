@@ -46,6 +46,7 @@ smartTOCHideUnfocusedChildren = true
   showDateUpdated = false
   showAuthor = true
   showHero = true
+  showComments = true
   heroStyle = "basic" # valid options: basic, big, background
   showBreadcrumbs = true
   showDraftLabel = true
