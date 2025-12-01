@@ -5,7 +5,7 @@ categories: ["Post","Blog",]
 tags: ["compose","security","screenshot"]
 #externalUrl: ""
 showSummary: true
-date: 2025-12-05
+date: 2025-12-01
 ---
 
 ### Screenshot security in Android is more complicated than it looks.
