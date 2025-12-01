@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Jojonosaurus</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Behind the Screen: Detecting and Preventing Screenshots in Android</title>
+      <link>//localhost:1313/posts/flag-secure/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/flag-secure/</guid>
+      <description>Screenshot security in Android is more complicated than it looks, not just FLAG_SECURE</description>
+    </item>
     <item>
       <title>Building MxNet with Apache TVM v0.15 for Android (Arm64)</title>
       <link>//localhost:1313/posts/tvm-build/</link>
@@ -21,6 +28,34 @@
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/mas-report/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;I had the chance to work on an app that required a security test based on OWASP guidelines. Based on the requirement, I was asked to export a list of all the dependencies used in the app in the format &lt;code&gt;name|version|source&lt;/code&gt;. Since I was using version.toml with Gradle’s Version Catalog, getting everything into that format wasn’t straightforward. At first, I just used an LLM to help with the formatting—but along the way, I discovered a much simpler approach worth sharing.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Why Destructuring is Dangerous in Compose</title>
+      <link>//localhost:1313/posts/post-lite-one/</link>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/post-lite-one/</guid>
+      <description>Despite the official documentation says the syntax are equivalent, but it is not, here&amp;rsquo;s why.</description>
+    </item>
+    <item>
+      <title>Type-Safe Navigation in Jetpack Compose</title>
+      <link>//localhost:1313/posts/type-safe-navigation-compose/</link>
+      <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
+      <guid>//localhost:1313/posts/type-safe-navigation-compose/</guid>
+      <description>&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Setting up type-safe navigation with Kotlin Serialization&lt;/li&gt;&#xA;&lt;li&gt;Creating serializable route classes&lt;/li&gt;&#xA;&lt;li&gt;Navigation between screens&lt;/li&gt;&#xA;&lt;li&gt;Benefits over string-based navigation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;topics&#34;&gt;Topics&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;@Serializable data classes for routes&lt;/li&gt;&#xA;&lt;li&gt;NavHost setup with type-safe routes&lt;/li&gt;&#xA;&lt;li&gt;Navigation with arguments&lt;/li&gt;&#xA;&lt;li&gt;Best practices and gotchas&lt;/li&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;library-requirement&#34;&gt;Library Requirement&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Navigation Compose version &amp;gt;= 2.8.0 and version &amp;lt; 3.0.0 (Updated June 2025, Google have released a new Navigation3 Library for Jetpack Compose which is now in alpha with better backstack handling and some breaking changes.)&lt;/li&gt;&#xA;&lt;li&gt;KotlinX.Serialization&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm</title>
+      <link>//localhost:1313/posts/deep-link-fcm/</link>
+      <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
+      <guid>//localhost:1313/posts/deep-link-fcm/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;h2 id=&#34;this-post-is-being-built&#34;&gt;This Post is being built&lt;/h2&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;KotlinX.Serialization&lt;/li&gt;&#xA;&lt;li&gt;Navigation Compose&lt;/li&gt;&#xA;&lt;li&gt;Navigating Deep Links with Intents&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;url-parameters&#34;&gt;Url Parameters&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../res/url_scheme.png&#34; alt=&#34;image info&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>One to One vs. One to Many: Navigating Scaffold Strategies in Jetpack Compose</title>
+      <link>//localhost:1313/posts/bottom-nav-shared-transition/</link>
+      <pubDate>Sat, 02 Nov 2024 17:20:49 +0800</pubDate>
+      <guid>//localhost:1313/posts/bottom-nav-shared-transition/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Hello Navigation&#xA;Scaffold, NavHost&#xA;Nested Graph&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

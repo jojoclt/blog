@@ -6,6 +6,16 @@
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/posts/deep-link-fcm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="th"
+                href="//localhost:1313/th/posts/deep-link-fcm/"
+                />
   </url><url>
     <loc>//localhost:1313/th/tags/android/</loc>
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
@@ -26,6 +36,16 @@
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/categories/android-development/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="th"
+                href="//localhost:1313/th/categories/android-development/"
+                />
   </url><url>
     <loc>//localhost:1313/th/categories/</loc>
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
@@ -61,16 +81,46 @@
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/series/deep-link-compose-fcm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="th"
+                href="//localhost:1313/th/series/deep-link-compose-fcm/"
+                />
   </url><url>
     <loc>//localhost:1313/th/tags/deep-links/</loc>
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/tags/deep-links/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="th"
+                href="//localhost:1313/th/tags/deep-links/"
+                />
   </url><url>
     <loc>//localhost:1313/th/tags/fcm/</loc>
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/tags/fcm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="th"
+                href="//localhost:1313/th/tags/fcm/"
+                />
   </url><url>
     <loc>//localhost:1313/th/</loc>
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
@@ -91,6 +141,16 @@
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/tags/navigation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="th"
+                href="//localhost:1313/th/tags/navigation/"
+                />
   </url><url>
     <loc>//localhost:1313/th/posts/</loc>
     <lastmod>2024-12-21T16:00:28+08:00</lastmod>

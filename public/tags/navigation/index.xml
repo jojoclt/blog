@@ -4,85 +4,23 @@
     <title>Navigation on Jojonosaurus</title>
     <link>//localhost:1313/tags/navigation/</link>
     <description>Recent content in Navigation on Jojonosaurus</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <copyright>© 2025 Jojo Chalanthorn</copyright>
-    <lastBuildDate>Wed, 21 May 2025 16:00:28 +0800</lastBuildDate><atom:link href="//localhost:1313/tags/navigation/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 21 May 2025 16:00:28 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/navigation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Type-Safe Navigation in Jetpack Compose</title>
       <link>//localhost:1313/posts/type-safe-navigation-compose/</link>
       <pubDate>Wed, 21 May 2025 16:00:28 +0800</pubDate>
-      
       <guid>//localhost:1313/posts/type-safe-navigation-compose/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;What You&amp;rsquo;ll Learn 
-    &lt;div id=&#34;what-youll-learn&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#what-youll-learn&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Setting up type-safe navigation with Kotlin Serialization&lt;/li&gt;
-&lt;li&gt;Creating serializable route classes&lt;/li&gt;
-&lt;li&gt;Navigation between screens&lt;/li&gt;
-&lt;li&gt;Benefits over string-based navigation&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;Topics 
-    &lt;div id=&#34;topics&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#topics&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;@Serializable data classes for routes&lt;/li&gt;
-&lt;li&gt;NavHost setup with type-safe routes&lt;/li&gt;
-&lt;li&gt;Navigation with arguments&lt;/li&gt;
-&lt;li&gt;Best practices and gotchas&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 class=&#34;relative group&#34;&gt;Library Requirement 
-    &lt;div id=&#34;library-requirement&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#library-requirement&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Navigation Compose version &amp;gt;= 2.8.0 and version &amp;lt; 3.0.0 (Updated June 2025, Google have released a new Navigation3 Library for Jetpack Compose which is now in alpha with better backstack handling and some breaking changes.)&lt;/li&gt;
-&lt;li&gt;KotlinX.Serialization&lt;/li&gt;
-&lt;/ul&gt;</description>
-      
+      <description>&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Setting up type-safe navigation with Kotlin Serialization&lt;/li&gt;&#xA;&lt;li&gt;Creating serializable route classes&lt;/li&gt;&#xA;&lt;li&gt;Navigation between screens&lt;/li&gt;&#xA;&lt;li&gt;Benefits over string-based navigation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;topics&#34;&gt;Topics&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;@Serializable data classes for routes&lt;/li&gt;&#xA;&lt;li&gt;NavHost setup with type-safe routes&lt;/li&gt;&#xA;&lt;li&gt;Navigation with arguments&lt;/li&gt;&#xA;&lt;li&gt;Best practices and gotchas&lt;/li&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;library-requirement&#34;&gt;Library Requirement&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Navigation Compose version &amp;gt;= 2.8.0 and version &amp;lt; 3.0.0 (Updated June 2025, Google have released a new Navigation3 Library for Jetpack Compose which is now in alpha with better backstack handling and some breaking changes.)&lt;/li&gt;&#xA;&lt;li&gt;KotlinX.Serialization&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>🚧Integrating Deep Links with Type-Safe Navigation Compose (and custom parsing) and fcm</title>
       <link>//localhost:1313/posts/deep-link-fcm/</link>
       <pubDate>Sat, 21 Dec 2024 16:00:28 +0800</pubDate>
-      
       <guid>//localhost:1313/posts/deep-link-fcm/</guid>
-      <description>&lt;blockquote&gt;
-&lt;h2 class=&#34;relative group&#34;&gt;This Post is being built 
-    &lt;div id=&#34;this-post-is-being-built&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;
-        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline&#34; href=&#34;#this-post-is-being-built&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;        
-    
-&lt;/h2&gt;&lt;/blockquote&gt;
-&lt;p&gt;By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph&lt;/p&gt;</description>
-      
+      <description>&lt;blockquote&gt;&#xA;&lt;h2 id=&#34;this-post-is-being-built&#34;&gt;This Post is being built&lt;/h2&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;By using deep links, you can jump from the notifications to a certain routes in NavGraph or even Nested Graph&lt;/p&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;KotlinX.Serialization&lt;/li&gt;&#xA;&lt;li&gt;Navigation Compose&lt;/li&gt;&#xA;&lt;li&gt;Navigating Deep Links with Intents&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;url-parameters&#34;&gt;Url Parameters&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../res/url_scheme.png&#34; alt=&#34;image info&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
