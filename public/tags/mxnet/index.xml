@@ -6,10 +6,17 @@
     <description>Recent content in Mxnet on Jojonosaurus</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/mxnet/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Building MxNet with Apache TVM v0.15 for Android (Arm64)</title>
+      <title>Deploying Models to Android (Arm64) [PART-2]</title>
+      <link>//localhost:1313/posts/tvm-deploy/</link>
+      <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/tvm-deploy/</guid>
+      <description>Despite the old models, some still have requirements to use this model</description>
+    </item>
+    <item>
+      <title>Building MxNet with Apache TVM v0.11 for Android (Arm64) [PART-1]</title>
       <link>//localhost:1313/posts/tvm-build/</link>
       <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/tvm-build/</guid>

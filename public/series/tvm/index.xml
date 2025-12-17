@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tvm on Jojonosaurus</title>
-    <link>//localhost:1313/tags/tvm/</link>
+    <link>//localhost:1313/series/tvm/</link>
     <description>Recent content in Tvm on Jojonosaurus</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 10 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/tvm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/series/tvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploying Models to Android (Arm64) [PART-2]</title>
       <link>//localhost:1313/posts/tvm-deploy/</link>
