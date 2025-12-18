@@ -27,40 +27,48 @@ This section explains:
 
 ---
 
+# 0. Code for compiling MXNet Model to TVM Models. (Recommend using NDK29 as it supports 16 KB Page Size which require for Android 16)
+
 ```py
-import mxnet as mx
-import tvm
-from tvm import relay
-from tvm.contrib import cc
 import os
 
 # ======================================================
 # 🔧 CONFIG
 # ======================================================
-local = True
-ndk_path = "/home/jojoclt/android-ndk/android-ndk-r25c"
+# TODO Set to True if compiling for local machine and set the target accordingly
+local = False
+ndk_path = os.environ.get("ANDROID_NDK")
+if ndk_path is None and not local:
+    raise EnvironmentError("Please set ANDROID_NDK environment variable for cross-compilation.")
 toolchain = f"{ndk_path}/toolchains/llvm/prebuilt/linux-x86_64/bin"
 cross_cc = f"{toolchain}/aarch64-linux-android21-clang"
+
+import mxnet as mx
+import tvm
+from tvm import relay
+from tvm.contrib import cc
 
 # ======================================================
 # 🧠 1. Load your MXNet model
 # ======================================================
 # Replace these with your own model filenames (without extensions)
-prefix = "./prednet_v3/pred_net_v003"
-epoch = 15  # or whatever number matches your params filename
 
-output_prefix = "./prednet_v3_out_new_local/"
+# TODO ./path/to/file/my-model
+prefix = "./ecg12_v2/ECG12Net_v2 (MI-1)"
+# TODO epoch 0000
+epoch = 0  # or whatever number matches your params filename
+
+output_prefix = "./a_very_new_ecg_AMI/"
 os.makedirs(output_prefix, exist_ok=True)
+
 # This loads: my_model-symbol.json and my_model-0000.params
 sym, arg_params, aux_params = mx.model.load_checkpoint(prefix, epoch)
-
-# If you want to inspect the symbol structure
-# print(sym.get_internals().list_outputs()[:10])
 
 # ======================================================
 # 🧩 2. Convert to Relay IR
 # ======================================================
-shape_dict = {"data": (3,1,1,12288)}  # change if your model expects different input
+# TODO change shape as needed
+shape_dict = {"data": (11,1,12,1024)}  # change if your model expects different input
 mod, params = relay.frontend.from_mxnet(
     sym,
     shape_dict,
@@ -84,20 +92,27 @@ with tvm.transform.PassContext(opt_level=3):
 if local:
     compile = None
 else:
-    compile = cc.cross_compiler(cross_cc, options=["-lm"])
+    compile = cc.cross_compiler(
+    cross_cc,
+    options=[
+        "-lm",
+        # "-Wl,-z,max-page-size=0x4000"
+    ],
+)
 
-lib.export_library(f"{output_prefix}deploy_lib.so", fcompile=compile)
+lib.export_library(os.path.join(output_prefix, "deploy_lib_cpu.so"), fcompile=compile)
 
 # ======================================================
 # 📦 4. Export artifacts
 # ======================================================
-with open(f"{output_prefix}deploy_graph.json", "w") as f:
+with open(os.path.join(output_prefix, "deploy_graph.json"), "w") as f:
     f.write(lib.get_graph_json())
 
-with open(f"{output_prefix}deploy_param.params", "wb") as f:
+with open(os.path.join(output_prefix, "deploy_param.params"), "wb") as f:
     f.write(relay.save_param_dict(lib.get_params()))
 
-print("✅ Export done: deploy_lib.so, deploy_graph.json, deploy_param.params")
+print("✅ Export done: deploy_lib_cpu.so, deploy_graph.json, deploy_param.params")
+
 
 ```
 
@@ -118,17 +133,18 @@ Example:
 
 ```
 assets/
- └── ecg_model.so
- └── ecg_model.json
- └── ecg_model.params
+ └── standard/ami
+        └── deploy_graph.json
+        └── deploy_param.params
+ └── deploy_lib_cpu.so
 ```
 
 Your `TVMRunner` should point to these exact filenames:
 
 ```kotlin
-val jsonPath = "ecg_model.json"
-val paramsPath = "ecg_model.params"
-val libPath = "ecg_model.so"
+val jsonPath = "deploy_graph.json"
+val paramsPath = "deploy_param.params"
+val libPath = "deploy_lib_cpu.so"
 ```
 
 Assets are copied into the APK automatically.
@@ -175,6 +191,8 @@ In your `build.gradle.kts`, you hard-point to your local NDK path:
 ```kotlin
 val ndkBuild = "C:\\Users\\Jojo\\AppData\\Local\\Android\\Sdk\\ndk\\29.0.13846066\\build\\ndk-build.cmd"
 ```
+
+or on linux with the ndk downloaded it will be at /android-ndk-r29/build/ndk-build.cmd or ndk-build
 
 ✔ Make sure the version number matches the NDK version installed in:
 **Android Studio → Settings → SDK Manager → Android SDK → SDK Tools → NDK**

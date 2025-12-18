@@ -31,12 +31,14 @@ You will also need conda installation on your devices.
 - Conda
 - Linux
 - Android Studio
-- Android NDK [[LINK]](https://developer.android.com/ndk/downloads), Any version is fine, (tested with r25c)
+- Android NDK [[LINK]](https://developer.android.com/ndk/downloads), Recommended r29 (Supports Android 16KB Requirement Out of the box)
 - TVM Binaries (Below)
 
 ## 1. Host Build (Linux)
 
 ### 1.1. Download TVM v0.11.0
+
+Suggested downloading from here instead of cloning from github, as the repository have submodules which is very easy to miss.
 
 ```bash
 wget https://dlcdn.apache.org/tvm/tvm-v0.11.0/apache-tvm-src-v0.11.0.tar.gz
@@ -44,9 +46,9 @@ tar -xzf apache-tvm-src-v0.11.0.tar.gz
 mv apache-tvm-src-v0.11.0 tvm && cd tvm
 ```
 
->  v0.15 is the last version supporting Relay (frontend for MXNet)
+>  v0.15 is the last version supporting Relay (frontend for MXNet) Later versions use Relax which drops MXNet support.
 
-> (Tested on v0.11) Later versions use Relax which drops MXNet support.
+> (Tested on v0.11) 
 
 ### 1.2. Environment Setup
 
@@ -98,9 +100,19 @@ export TVM_HOME=~/tvm
 export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}
 ```
 
-After done building, navigate to `~/tvm` and run `make jvmpkg` and `make jvminstall`
+```bash
+source ~/.bashrc
+```
 
-## 2. Deploy & Verify
+Then build the JVM package:
+
+```bash
+cd ~/tvm && make jvmpkg && make jvminstall
+```
+
+## 2. Verify if it is working (OR skip to [PART-2 for Android](/posts/tvm-deploy/))
+
+Noted that we will use the example app we downloaded from the [apache-tvm](#11-download-tvm-v0110) earlier, we will find the `apps/android_deploy`
 
 ### 2.1. Android App Setup (Gradle)
 
@@ -113,40 +125,11 @@ After done building, navigate to `~/tvm` and run `make jvmpkg` and `make jvminst
 - Use **Gradle Wrapper** + **Amazon Corretto 17** as Gradle JDK if have any compatibility issues
 - Download [NDK](https://developer.android.com/ndk/downloads) and ensure `$ANDROID_NDK` is visible in `$PATH`.
 
----
+### 2.2. Deploying Model in `android_deploy` app
 
-### 2.2. Torch → Relay Export Example
+After converting the model to Relay (TVM), the model file must be placed in the `assets/` folder in [github](https://github.com/apache/tvm/tree/v0.11.0/apps/android_deploy/app). Then need to fix some [gradle and compatibility](#21-android-app-setup-gradle). Also Need to setup the correct `ndk-build` version in the gradle files. The repository already have the `download-models.gradle` which will be downloaded on first launch. If you need to use the custom model, the `download-models.gradle` import must be disabled in the `build.gradle` file.
 
-```python
-import torch, torchvision, tvm
-from tvm import relay
-from tvm.contrib import ndk
-
-model = torchvision.models.mobilenet_v2(weights="IMAGENET1K_V1").eval()
-dummy = torch.randn([1,3,224,224])
-scripted = torch.jit.trace(model, dummy).eval()
-
-shape_list = [("input0", (1,3,224,224))]
-mod, params = relay.frontend.from_pytorch(scripted, shape_list)
-
-target = "llvm -mtriple=aarch64-linux-android"
-with tvm.transform.PassContext(opt_level=3):
-    lib = relay.build(mod, target=target, params=params)
-
-lib.export_library("deploy_lib.so", fcompile=ndk.create_shared)
-open("deploy_graph.json","w").write(lib.get_graph_json())
-open("deploy_param.params","wb").write(relay.save_param_dict(lib.get_params()))
-
-print("✅ Exported artifacts for Android runtime.")
-```
-
----
-
-### 2.3. Deploying Model in `android_deploy` app
-
-After converting the model to Relay (TVM), the model file must be placed in the `assets/` folder in [github](https://github.com/apache/tvm/tree/v0.15.0/apps/android_deploy/app). Then need to fix some gradle and compatibility. Also Need to setup the correct `ndk-build` version in the gradle files. Then to use the custom model, the `download-models.gradle` import must be disabled in the `build.gradle` file.
-
-Then running the task `buildJni` from gradle will compile and build the correct library for TVM.
+Then running the task `build` from gradle will compile and build the correct library for TVM.
 
 ---
 

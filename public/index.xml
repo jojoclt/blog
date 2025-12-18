@@ -16,18 +16,18 @@
       <description>Despite the old models, some still have requirements to use this model</description>
     </item>
     <item>
+      <title>Building MxNet with Apache TVM v0.11 for Android (Arm64) [PART-1]</title>
+      <link>//localhost:1313/posts/tvm-build/</link>
+      <pubDate>Fri, 05 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/tvm-build/</guid>
+      <description>Despite the old models, some still have requirements to use this model</description>
+    </item>
+    <item>
       <title>Behind the Screen: Detecting and Preventing Screenshots in Android</title>
       <link>//localhost:1313/posts/flag-secure/</link>
       <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/posts/flag-secure/</guid>
       <description>Screenshot security in Android is more complicated than it looks, not just FLAG_SECURE</description>
-    </item>
-    <item>
-      <title>Building MxNet with Apache TVM v0.11 for Android (Arm64) [PART-1]</title>
-      <link>//localhost:1313/posts/tvm-build/</link>
-      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/tvm-build/</guid>
-      <description>Despite the old models, some still have requirements to use this model</description>
     </item>
     <item>
       <title>Extract Gradle Dependencies for Mobile App Security (MAS)</title>
