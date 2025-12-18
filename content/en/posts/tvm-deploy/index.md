@@ -10,6 +10,9 @@ series: ["tvm"]
 series_order: 2
 ---
 
+Tl;Dr [Git Repo with working implementation](https://github.com/jojoclt/ECGStandard), don't forget to download the apache-tvm 0.11 zip [in PART 1](/posts/tvm-build)
+
+Also if you want to deploy your own models, you can do so, but please don't forget to comment out the `download-models.gradle` in the `build.gradle.kts`
 
 # **Android TVM Demo: Running a Full Inference Pipeline with TVM + Chaquopy**
 
@@ -123,7 +126,7 @@ print("✅ Export done: deploy_lib_cpu.so, deploy_graph.json, deploy_param.param
 This demo assumes you already compiled models using TVM (Relay → Graph Executor → .so + JSON + params).
 Place all compiled runtime artifacts inside:
 
-Note that this guide only works on Android Physical Device, if you want to try it on emulator Android x86 on Windows, you need to rebuild the model to support it.
+Note that this guide only works on Android Physical Device (arm64-v8a), if you want to try it on emulator Android x86 on Windows, you need to rebuild the model to support it.
 
 ```
 app/src/main/assets/
@@ -192,7 +195,7 @@ In your `build.gradle.kts`, you hard-point to your local NDK path:
 val ndkBuild = "C:\\Users\\Jojo\\AppData\\Local\\Android\\Sdk\\ndk\\29.0.13846066\\build\\ndk-build.cmd"
 ```
 
-or on linux with the ndk downloaded it will be at /android-ndk-r29/build/ndk-build.cmd or ndk-build
+> or on linux with the ndk downloaded it will be at YOUR_PATH/android-ndk-r29/build/ndk-build.cmd or ndk-build
 
 ✔ Make sure the version number matches the NDK version installed in:
 **Android Studio → Settings → SDK Manager → Android SDK → SDK Tools → NDK**
@@ -202,6 +205,8 @@ If you upgrade the NDK, this path must be updated.
 ---
 
 # **5. Chaquopy Build Quirks**
+
+To run the inference on Android, we need to run the preprocessing and postprocessing which is in Python, so we will use the library call Chaquopy
 
 Chaquopy is powerful, but sometimes Android Studio behaves… uniquely.
 
@@ -235,21 +240,10 @@ separate into
 | Read JSON         | Preprocess Data       | Run TVM Inference | Postprocess Data                                 | Show Result to User |
 | Input: (12, 5000) | (11, 1, 12, 1024)     | Output: (11, 3)   | AMI classification (e.g., STEMI, NSTEMI, PSTEMI) | Final UI Display    |
 
+Also you can see that some parts of the file which in python, there will be some change, including the removal of all mxnet traces, because we choose to run the model on Android
 
 
 # **7. Summary**
-
-Your Android TVM demo must include:
-
-### ✔ Prebuilt TVM models in **assets/**
-
-### ✔ Android folder placed **inside `/apps`** of TVM
-
-### ✔ Correct NDK path in `build.gradle.kts`
-
-### ✔ Chaquopy sync issues (rebuild / restart)
-
-### ✔ Clean multi-stage inference pipeline:
 
 1. Android → Read raw data
 2. Chaquopy → Preprocess

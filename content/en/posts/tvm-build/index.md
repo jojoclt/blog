@@ -129,6 +129,8 @@ Noted that we will use the example app we downloaded from the [apache-tvm](#11-d
 
 After converting the model to Relay (TVM), the model file must be placed in the `assets/` folder in [github](https://github.com/apache/tvm/tree/v0.11.0/apps/android_deploy/app). Then need to fix some [gradle and compatibility](#21-android-app-setup-gradle). Also Need to setup the correct `ndk-build` version in the gradle files. The repository already have the `download-models.gradle` which will be downloaded on first launch. If you need to use the custom model, the `download-models.gradle` import must be disabled in the `build.gradle` file.
 
+> Note that whether you use the `android_deploy` from `.zip` or from the repository, it is missing a `graph_executor_factory.cc` in the `jni/tvm_runtime.h`, please add the line in.
+
 Then running the task `build` from gradle will compile and build the correct library for TVM.
 
 ---
@@ -137,6 +139,6 @@ Then running the task `build` from gradle will compile and build the correct lib
 
 | Issue | Cause | Fix |
 | --- | --- | --- |
-| `arg2.ndim is expected to equal 4` | MXNet model shape mismatch | Possible Wrong Runtime, re-export runtime |
-| `GraphExecutorFactory not found` | Missing`graph_executor_factory.cc`in tvm_runtime.h | Add file + rebuild`tvm_runtime` |
+| `arg2.ndim is expected to equal 4` | MXNet model shape mismatch | Possible Wrong Runtime, try rebuilding TVM and rebuilding models |
+| `GraphExecutorFactory not found` | Missing`graph_executor_factory.cc`in tvm_runtime.h | Add `graph_executor_factory.cc` under `jni/tvm_runtime.h` in Android Project |
 | `undefined reference to 'sin'` | Missing math lib link | Add`-lm`to`fcompile`flags |
