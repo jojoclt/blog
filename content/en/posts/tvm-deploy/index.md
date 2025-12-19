@@ -119,9 +119,9 @@ print("✅ Export done: deploy_lib_cpu.so, deploy_graph.json, deploy_param.param
 
 ```
 
-# **1. Project Requirements**
+## 1. Project Requirements
 
-### ✅ **1.1 Pre-built TVM models**
+### ✅ 1.1 Pre-built TVM models
 
 This demo assumes you already compiled models using TVM (Relay → Graph Executor → .so + JSON + params).
 Place all compiled runtime artifacts inside:
@@ -154,7 +154,7 @@ Assets are copied into the APK automatically.
 
 ---
 
-# **2. Apache TVM Version Compatibility**
+## 2. Apache TVM Version Compatibility
 
 Tested and working versions:
 
@@ -165,7 +165,7 @@ Newer builds (compared to upstream main) still work as long as the JNI runtime s
 
 ---
 
-# **3. Android Project Folder Layout**
+## 3. Android Project Folder Layout
 
 To ensure Gradle can find runtime sources, JNI paths, and tvm4j JAR files:
 
@@ -187,7 +187,7 @@ If you move the Android folder elsewhere, everything breaks.
 
 ---
 
-# **4. NDK Path Requirement (Very Important)**
+## 4. NDK Path Requirement (Very Important)
 
 In your `build.gradle.kts`, you hard-point to your local NDK path:
 
@@ -204,7 +204,26 @@ If you upgrade the NDK, this path must be updated.
 
 ---
 
-# **5. Chaquopy Build Quirks**
+## 5. make/config.mk
+
+Application default has CPU and GPU (OpenCL) versions TVM runtime flavor and follow below instruction to setup. In app/src/main/jni/make you will find JNI Makefile config config.mk and copy it to app/src/main/jni and modify it.
+
+```bash
+cd apps/android_deploy/app/src/main/jni
+cp make/config.mk .
+```
+
+Here's a piece of example for config.mk.
+
+```bash
+APP_ABI = arm64-v8a
+
+APP_PLATFORM = android-17
+
+USE_OPENCL = 0 # This build disable GPU, to use GPU, you need to build some library your self which is not covered in this topic.
+```
+
+## 6. Chaquopy Build Quirks
 
 To run the inference on Android, we need to run the preprocessing and postprocessing which is in Python, so we will use the library call Chaquopy
 
@@ -229,7 +248,7 @@ This is a known Chaquopy behavior because it performs its own internal Python en
 
 ---
 
-# **6. Designing a Real Inference Pipeline**
+## 7. Designing a Real Inference Pipeline
 
 Instead of calling a single big function, it’s cleaner and more maintainable to split the workflow across **Android** and **Python (Chaquopy)**.
 
@@ -243,7 +262,7 @@ separate into
 Also you can see that some parts of the file which in python, there will be some change, including the removal of all mxnet traces, because we choose to run the model on Android
 
 
-# **7. Summary**
+## 8. Summary
 
 1. Android → Read raw data
 2. Chaquopy → Preprocess
