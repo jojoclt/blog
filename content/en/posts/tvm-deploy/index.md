@@ -10,10 +10,6 @@ series: ["tvm"]
 series_order: 2
 ---
 
-Tl;Dr [Git Repo with working implementation](https://github.com/jojoclt/ECGStandard), don't forget to download the apache-tvm 0.11 zip [in PART 1](/posts/tvm-build)
-
-Also if you want to deploy your own models, you can do so, but please don't forget to comment out the `download-models.gradle` in the `build.gradle.kts`
-
 # **Android TVM Demo: Running a Full Inference Pipeline with TVM + Chaquopy**
 
 
